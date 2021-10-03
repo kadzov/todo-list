@@ -1,7 +1,6 @@
 $border: 0.1rem solid #6e6e6e;
 
 * {
-  // margin: 0;
   color: #eee;
   background-color: rgb(46, 46, 46);
   font: {
@@ -10,9 +9,12 @@ $border: 0.1rem solid #6e6e6e;
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 }
-#content {
-  margin: auto;
-  max-width: 40rem;
+body {
+  margin: 1rem;
+  #content {
+    margin: auto;
+    max-width: 40rem;
+  }
 }
 #bar {
   display: flex;
@@ -27,7 +29,7 @@ $border: 0.1rem solid #6e6e6e;
       right: 0;
     }
   }
-  #text {
+  input {
     outline: 0;
     width: 100%;
     border: $border {
