@@ -1,36 +1,39 @@
-textarea {
-  width: 100%;
-  padding: 15px;
-  outline: 0;
-  resize: none;
-  &::placeholder {
-    color: #9e9d9d;
-  }
-  &:first-child {
-    font-weight: 500;
-    border-radius: 0.3rem 0.3rem 0 0;
-  }
-  &:last-child {
-    border-radius: 0;
-  }
-}
-#pane {
-  display: flex;
-  gap: 0.7rem;
-  margin: 0.5rem;
-  border-radius: 0 0 0.3rem 0.3rem;
-  button {
-    cursor: pointer;
-    user-select: none;
-    padding: 0.3rem 1rem;
+#editor {
+  border: 0.1rem solid #6e6e6e;
+  textarea {
+    width: 100%;
+    padding: 15px;
+    outline: 0;
+    resize: none;
+    &::placeholder {
+      color: #9e9d9d;
+    }
     &:first-child {
-      background-color: rgb(38, 131, 207);
+      font-weight: 500;
+      border-radius: 0.3rem 0.3rem 0 0;
     }
     &:last-child {
-      border: 0.1rem solid #6e6e6e;
-      &:hover {
-        transition-duration: 0.2s;
-        background-color: rgb(107, 107, 107);
+      border-radius: 0;
+    }
+  }
+  #pane {
+    display: flex;
+    margin: 0.5rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    button {
+      cursor: pointer;
+      user-select: none;
+      padding: 0.3rem 1rem;
+      &:first-child {
+        background-color: rgb(38, 131, 207);
+        margin-right: 0.7rem;
+      }
+      &:last-child {
+        border: 0.1rem solid #6e6e6e;
+        &:hover {
+          transition-duration: 0.2s;
+          background-color: rgb(107, 107, 107);
+        }
       }
     }
   }
