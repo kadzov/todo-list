@@ -11,13 +11,11 @@ editor.id = 'editor';
 content.append(editor);
 
 const title = document.createElement('textarea');
-title.className = 'input';
 title.placeholder = 'New task';
 title.rows = 1;
 editor.append(title);
 
 const description = document.createElement('textarea');
-description.className = 'input';
 description.placeholder = 'Add details';
 description.rows = 1;
 editor.append(description);
@@ -35,14 +33,14 @@ title.addEventListener('keydown', (e) => {
   }
 });
 
-const buttons = document.createElement('div');
-buttons.id = 'pane';
-editor.append(buttons);
+const pane = document.createElement('div');
+pane.id = 'pane';
+editor.append(pane);
 
 const save = document.createElement('button');
 save.append('Save');
-buttons.append(save);
+pane.append(save);
 
 const cancel = document.createElement('button');
 cancel.append('Cancel');
-buttons.append(cancel);
+pane.append(cancel);
