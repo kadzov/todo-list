@@ -1,5 +1,6 @@
 * {
   color: #fff;
+  background-color: #1d1d1d;
   box-sizing: border-box;
   font: {
     size: 1.1rem;
@@ -9,15 +10,15 @@
   border: 0 {
     radius: 0.3rem;
   }
-  &:not(html) {
-    background-color: #1d1d1d;
-  }
 }
-body {
-  margin: 1rem;
+html {
   background-color: #303030;
-  #content {
-    margin: auto;
-    max-width: 35rem;
+  body {
+    margin: 1rem;
+    background-color: #303030;
+    #content {
+      margin: auto;
+      max-width: 35rem;
+    }
   }
 }
