@@ -16,8 +16,12 @@
 }
 body {
   margin: 1rem;
-  #content {
-    margin: auto;
-    max-width: 35rem;
-  }
+}
+#content {
+  margin: auto;
+  max-width: 35rem;
+}
+#editor,
+button {
+  border: 0.1rem solid #6e6e6e;
 }
