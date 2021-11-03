@@ -18,19 +18,18 @@
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
-    @mixin get-color($color) {
+    @mixin get-color($color, $black: false) {
       border: 0.1rem solid $color;
       &:hover,
       &:focus {
         background-color: $color;
+        @if $black {
+          color: #000;
+        }
       }
     }
     &:nth-child(3) {
-      @include get-color(#1eff1e);
-      &:hover,
-      &:focus {
-        color: #000;
-      }
+      @include get-color(#1eff1e, true);
     }
     &:nth-child(4) {
       @include get-color(#ff351b);
