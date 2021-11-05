@@ -21,7 +21,7 @@
     @mixin get-color($color, $black: false) {
       border: 0.1rem solid $color;
       &:hover,
-      &:focus {
+      &:focus-visible {
         background-color: $color;
         @if $black {
           color: #000;
