@@ -5,11 +5,13 @@ export default () => {
   editor.id = 'editor';
 
   const title = document.createElement('textarea');
+  title.id = 'title';
   title.placeholder = 'New task';
   title.rows = 1;
   editor.append(title);
 
   const description = document.createElement('textarea');
+  description.id = 'description';
   description.placeholder = 'Add details';
   description.rows = 1;
   editor.append(description);
