@@ -18,22 +18,22 @@
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
-    @mixin get-color($color, $black: false) {
-      border: 0.1rem solid $color;
-      &:hover,
-      &:focus-visible {
-        background-color: $color;
-        @if $black {
-          color: #000;
-        }
+  }
+  @mixin get-color($color, $black: false) {
+    border: 0.1rem solid $color;
+    &:hover,
+    &:focus-visible {
+      background-color: $color;
+      @if $black {
+        color: #000;
       }
     }
-    &:nth-child(3) {
-      @include get-color(#1eff1e, true);
-    }
-    &:nth-child(4) {
-      @include get-color(#ff351b);
-      margin-left: 0;
-    }
+  }
+  #save {
+    @include get-color(#1eff1e, true);
+  }
+  #delete {
+    @include get-color(#ff351b);
+    margin-left: 0;
   }
 }

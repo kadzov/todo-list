@@ -27,13 +27,15 @@ export default () => {
     }
   });
 
-  const saveButton = document.createElement('button');
-  saveButton.append('Save');
-  editor.append(saveButton);
+  const save = document.createElement('button');
+  save.append('Save');
+  save.id = 'save';
+  editor.append(save);
 
-  const deleteButton = document.createElement('button');
-  deleteButton.append('Delete');
-  editor.append(deleteButton);
+  const del = document.createElement('button');
+  del.append('Delete');
+  del.id = 'delete';
+  editor.append(del);
 
   return editor;
 };
