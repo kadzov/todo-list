@@ -8,6 +8,7 @@ export default () => {
   save.addEventListener('click', () => {
     const task = document.createElement('div');
     task.className = 'task';
+    tasks.append(task);
 
     const title = document.createElement('div');
     title.append((document.querySelector('#title') as HTMLInputElement).value);
@@ -18,8 +19,6 @@ export default () => {
       (document.querySelector('#description') as HTMLInputElement).value
     );
     task.append(description);
-
-    tasks.append(task);
   });
 
   return tasks;
