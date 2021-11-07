@@ -1,5 +1,5 @@
-$inner: 5px;
-$outer: 15px;
+$inner: 6px;
+$outer: 17px;
 #editor {
   border: 0.1rem solid #6e6e6e;
   padding-bottom: $outer;
@@ -16,7 +16,7 @@ $outer: 15px;
     font-weight: 500;
   }
   #description {
-    padding: $inner $outer 25px;
+    padding: $inner $outer 24px;
   }
 
   button {
