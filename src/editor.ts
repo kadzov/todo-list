@@ -6,13 +6,13 @@ export default () => {
 
   const title = document.createElement('textarea');
   title.id = 'title';
-  title.placeholder = 'New task';
+  title.placeholder = 'Title';
   title.rows = 1;
   editor.append(title);
 
   const description = document.createElement('textarea');
   description.id = 'description';
-  description.placeholder = 'Add details';
+  description.placeholder = 'Description';
   description.rows = 1;
   editor.append(description);
 
@@ -29,10 +29,10 @@ export default () => {
     }
   });
 
-  const save = document.createElement('button');
-  save.append('Save');
-  save.id = 'save';
-  editor.append(save);
+  const add = document.createElement('button');
+  add.append('Add');
+  add.id = 'add';
+  editor.append(add);
 
   const del = document.createElement('button');
   del.append('Delete');
