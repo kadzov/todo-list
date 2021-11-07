@@ -1,18 +1,17 @@
-$color: #e0e0e0;
 $inner: 6px;
 $outer: 17px;
 #editor {
   padding-bottom: $outer;
   &,
   & * {
-    background-color: #1d1d1d;
+    background-color: #2b2b2b;
   }
   textarea {
     display: block;
     width: 100%;
     resize: none;
     &::placeholder {
-      color: $color;
+      color: #bbb;
     }
   }
   #title {
@@ -25,7 +24,6 @@ $outer: 17px;
 
   button {
     padding: 0.3rem 1rem;
-    color: $color;
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
