@@ -1,4 +1,6 @@
 #tasks {
   margin-top: 1rem;
-  background-color: orange;
+  .task {
+    border: 0.1rem solid black;
+  }
 }
