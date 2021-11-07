@@ -6,21 +6,28 @@ export default () => {
 
   const add = document.querySelector('#add');
   add.addEventListener('click', () => {
-    const task = document.createElement('div');
-    task.className = 'task';
-    tasks.append(task);
+    const editorTitle = (document.querySelector('#title') as HTMLInputElement)
+      .value;
+    if (editorTitle) {
+      const task = document.createElement('div');
+      task.className = 'task';
+      tasks.append(task);
 
-    const title = document.createElement('div');
-    title.className = 'title';
-    title.append((document.querySelector('#title') as HTMLInputElement).value);
-    task.append(title);
+      const title = document.createElement('div');
+      title.className = 'title';
+      title.append(editorTitle);
+      task.append(title);
 
-    const description = document.createElement('div');
-    description.className = 'description';
-    description.append(
-      (document.querySelector('#description') as HTMLInputElement).value
-    );
-    task.append(description);
+      const descriptionTitle = (
+        document.querySelector('#description') as HTMLInputElement
+      ).value;
+      if (descriptionTitle) {
+        const description = document.createElement('div');
+        description.className = 'description';
+        description.append(descriptionTitle);
+        task.append(description);
+      }
+    }
   });
 
   return tasks;
