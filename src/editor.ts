@@ -23,16 +23,17 @@ export default () => {
   title.addEventListener('input', changeHeight);
   description.addEventListener('input', changeHeight);
 
-  title.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter') {
-      e.preventDefault();
-    }
-  });
-
   const add = document.createElement('button');
   add.append('Add');
   add.id = 'add';
   editor.append(add);
+
+  title.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+      e.preventDefault();
+      add.click();
+    }
+  });
 
   const del = document.createElement('button');
   del.append('Delete');
