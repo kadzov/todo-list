@@ -1,3 +1,4 @@
+$color: #e0e0e0;
 $inner: 6px;
 $outer: 17px;
 #editor {
@@ -12,7 +13,7 @@ $outer: 17px;
     width: 100%;
     resize: none;
     &::placeholder {
-      color: #9e9d9d;
+      color: $color;
     }
   }
   #title {
@@ -25,6 +26,7 @@ $outer: 17px;
 
   button {
     padding: 0.3rem 1rem;
+    color: $color;
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
