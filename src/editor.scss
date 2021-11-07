@@ -3,6 +3,10 @@ $outer: 17px;
 #editor {
   border: 0.1rem solid #6e6e6e;
   padding-bottom: $outer;
+  &,
+  & * {
+    background-color: #1d1d1d;
+  }
   textarea {
     display: block;
     width: 100%;
@@ -42,6 +46,6 @@ $outer: 17px;
   }
   #delete {
     @include get-color(#ff351b);
-    margin-left: .7rem;
+    margin-left: 0.7rem;
   }
 }

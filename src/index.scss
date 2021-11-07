@@ -1,6 +1,5 @@
 * {
   color: #fff;
-  background-color: #303030;
   box-sizing: border-box;
   outline: 0;
   font: {
@@ -11,12 +10,10 @@
   border: 0 {
     radius: 0.3rem;
   }
-  &:not(html, body) {
-    background-color: #1d1d1d;
-  }
 }
 body {
   margin: 1rem;
+  background-color: #303030;
   #content {
     margin: auto;
     max-width: 35rem;
