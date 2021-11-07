@@ -1,19 +1,25 @@
+$inner: 5px;
+$outer: 15px;
 #editor {
   border: 0.1rem solid #6e6e6e;
+  padding-bottom: $outer;
   textarea {
     display: block;
     width: 100%;
-    padding: 15px;
     resize: none;
     &::placeholder {
       color: #9e9d9d;
     }
   }
   #title {
+    padding: $outer $outer $inner;
     font-weight: 500;
   }
+  #description {
+    padding: $inner $outer 25px;
+  }
+
   button {
-    margin: 0.5rem;
     padding: 0.3rem 1rem;
     cursor: pointer;
     user-select: none;
@@ -29,11 +35,13 @@
       }
     }
   }
+
   #add {
     @include get-color(#1eff1e, true);
+    margin-left: $outer;
   }
   #delete {
     @include get-color(#ff351b);
-    margin-left: 0;
+    margin-left: .7rem;
   }
 }
