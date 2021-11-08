@@ -13,6 +13,14 @@ export default () => {
       task.className = 'task';
       tasks.append(task);
 
+      const circle = document.createElement('i');
+      circle.className = 'far fa-circle';
+      task.append(circle);
+
+      const check = document.createElement('i');
+      check.className = 'far fa-check-circle';
+      task.append(check);
+
       const title = document.createElement('div');
       title.className = 'title';
       title.append(editorTitle);
