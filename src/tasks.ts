@@ -38,7 +38,7 @@ export default () => {
       right.className = 'right';
       task.append(right);
 
-      const title = document.createElement('div');
+      const title = document.createElement('p');
       title.className = 'title';
       title.append(editorTitle);
       right.append(title);
@@ -47,7 +47,7 @@ export default () => {
         document.querySelector('#description') as HTMLInputElement
       ).value;
       if (descriptionTitle) {
-        const description = document.createElement('div');
+        const description = document.createElement('p');
         description.className = 'description';
         description.append(descriptionTitle);
         right.append(description);
