@@ -24,8 +24,19 @@ body {
 .task {
   background-color: #2b2b2b;
 }
+#editor,
+.task {
+  display: flex;
+  padding: 1rem;
+}
 .fa-plus,
 .task {
   cursor: pointer;
   user-select: none;
+}
+.right {
+  margin-left: 1rem;
+}
+.title {
+  font-weight: 500;
 }

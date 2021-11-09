@@ -5,7 +5,7 @@ export default () => {
   editor.id = 'editor';
 
   const left = document.createElement('div');
-  left.id = 'left';
+  left.className = 'left';
   editor.append(left);
 
   const plus = document.createElement('i');
@@ -13,11 +13,11 @@ export default () => {
   left.append(plus);
 
   const right = document.createElement('div');
-  right.id = 'right';
+  right.className = 'right';
   editor.append(right);
 
   const title = document.createElement('textarea');
-  title.id = 'title';
+  title.className = 'title';
   title.placeholder = 'Title';
   title.rows = 1;
   right.append(title);
@@ -30,7 +30,7 @@ export default () => {
   });
 
   const description = document.createElement('textarea');
-  description.id = 'description';
+  description.className = 'description';
   description.placeholder = 'Description';
   description.rows = 1;
   right.append(description);

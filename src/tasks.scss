@@ -1,15 +1,7 @@
 .task {
-  display: flex;
   margin-top: 1rem;
-  padding: 1rem;
   white-space: pre-wrap;
   .fa-check-circle {
     display: none;
-  }
-  .right {
-    margin-left: 1rem;
-    .title {
-      font-weight: 500;
-    }
   }
 }
