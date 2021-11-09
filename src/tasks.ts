@@ -13,13 +13,17 @@ export default () => {
       task.className = 'task';
       tasks.append(task);
 
+      const left = document.createElement('div');
+      left.id = 'left';
+      task.append(left);
+
       const circle = document.createElement('i');
       circle.className = 'far fa-circle';
-      task.append(circle);
+      left.append(circle);
 
       const check = document.createElement('i');
       check.className = 'far fa-check-circle';
-      task.append(check);
+      left.append(check);
 
       circle.addEventListener('mouseover', () => {
         circle.style.display = 'none';
@@ -30,10 +34,14 @@ export default () => {
         check.style.display = 'none';
       });
 
+      const right = document.createElement('div');
+      right.id = 'right';
+      task.append(right);
+
       const title = document.createElement('div');
       title.className = 'title';
       title.append(editorTitle);
-      task.append(title);
+      right.append(title);
 
       const descriptionTitle = (
         document.querySelector('#description') as HTMLInputElement
@@ -42,7 +50,7 @@ export default () => {
         const description = document.createElement('div');
         description.className = 'description';
         description.append(descriptionTitle);
-        task.append(description);
+        right.append(description);
       }
     }
   });
