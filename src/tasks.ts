@@ -14,7 +14,7 @@ export default () => {
       tasks.append(task);
 
       const left = document.createElement('div');
-      left.id = 'left';
+      left.className = 'left';
       task.append(left);
 
       const circle = document.createElement('i');
@@ -35,7 +35,7 @@ export default () => {
       });
 
       const right = document.createElement('div');
-      right.id = 'right';
+      right.className = 'right';
       task.append(right);
 
       const title = document.createElement('div');
