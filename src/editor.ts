@@ -4,17 +4,36 @@ export default () => {
   const editor = document.createElement('div');
   editor.id = 'editor';
 
+  const left = document.createElement('div');
+  left.id = 'left';
+  editor.append(left);
+
+  const plus = document.createElement('i');
+  plus.className = 'fas fa-plus';
+  left.append(plus);
+
+  const right = document.createElement('div');
+  right.id = 'right';
+  editor.append(right);
+
   const title = document.createElement('textarea');
   title.id = 'title';
   title.placeholder = 'Title';
   title.rows = 1;
-  editor.append(title);
+  right.append(title);
+
+  title.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+      e.preventDefault();
+      plus.click();
+    }
+  });
 
   const description = document.createElement('textarea');
   description.id = 'description';
   description.placeholder = 'Description';
   description.rows = 1;
-  editor.append(description);
+  right.append(description);
 
   function changeHeight() {
     this.style.height = 0;
@@ -22,23 +41,6 @@ export default () => {
   }
   title.addEventListener('input', changeHeight);
   description.addEventListener('input', changeHeight);
-
-  // const add = document.createElement('button');
-  // add.append('Add');
-  // add.id = 'add';
-  // editor.append(add);
-
-  // title.addEventListener('keydown', (e) => {
-  //   if (e.code === 'Enter') {
-  //     e.preventDefault();
-  //     add.click();
-  //   }
-  // });
-
-  // const del = document.createElement('button');
-  // del.append('Delete');
-  // del.id = 'delete';
-  // editor.append(del);
 
   return editor;
 };

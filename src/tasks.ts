@@ -4,7 +4,7 @@ export default () => {
   const tasks = document.createElement('div');
   tasks.id = 'tasks';
 
-  const add = document.querySelector('#add');
+  const add = document.querySelector('.fa-plus');
   add.addEventListener('click', () => {
     const editorTitle = (document.querySelector('#title') as HTMLInputElement)
       .value;
@@ -38,7 +38,7 @@ export default () => {
       right.className = 'right';
       task.append(right);
 
-      const title = document.createElement('p');
+      const title = document.createElement('div');
       title.className = 'title';
       title.append(editorTitle);
       right.append(title);
@@ -47,7 +47,7 @@ export default () => {
         document.querySelector('#description') as HTMLInputElement
       ).value;
       if (descriptionTitle) {
-        const description = document.createElement('p');
+        const description = document.createElement('div');
         description.className = 'description';
         description.append(descriptionTitle);
         right.append(description);

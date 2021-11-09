@@ -1,4 +1,5 @@
 #editor {
+  display: flex;
   padding: 1rem;
   textarea {
     display: block;
@@ -8,7 +9,10 @@
       color: #bbb;
     }
   }
-  #title {
-    font-weight: 500;
+  #right {
+    margin-left: 1rem;
+    #title {
+      font-weight: 500;
+    }
   }
 }
