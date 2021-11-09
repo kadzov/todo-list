@@ -1,8 +1,5 @@
-$inner: 6px;
-$outer: 17px;
-
 #editor {
-  padding-bottom: $outer;
+  padding: 1rem;
   textarea {
     display: block;
     width: 100%;
@@ -12,36 +9,6 @@ $outer: 17px;
     }
   }
   #title {
-    padding: $outer $outer $inner;
     font-weight: 500;
-  }
-  #description {
-    padding: $inner $outer 24px;
-  }
-
-  button {
-    padding: 0.3rem 1rem;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s;
-  }
-  @mixin get-color($color, $black: false) {
-    border: 0.1rem solid $color;
-    &:hover,
-    &:focus-visible {
-      background-color: $color;
-      @if $black {
-        color: #000;
-      }
-    }
-  }
-
-  #add {
-    @include get-color(#1eff1e, true);
-    margin-left: $outer;
-  }
-  #delete {
-    @include get-color(#ff351b);
-    margin-left: 0.7rem;
   }
 }
