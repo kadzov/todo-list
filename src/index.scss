@@ -27,16 +27,22 @@ body {
 #editor,
 .task {
   display: flex;
-  padding: 1rem;
 }
 .fa-plus,
 .task {
   cursor: pointer;
   user-select: none;
 }
+.left {
+  margin: 1rem;
+}
 .right {
-  margin-left: 1rem;
+  width: 100%;
 }
 .title {
+  padding-top: 1rem;
   font-weight: 500;
+}
+.description {
+  padding-bottom: 1rem;
 }
