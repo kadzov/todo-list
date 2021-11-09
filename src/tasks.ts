@@ -21,6 +21,15 @@ export default () => {
       check.className = 'far fa-check-circle';
       task.append(check);
 
+      circle.addEventListener('mouseover', () => {
+        circle.style.display = 'none';
+        check.style.display = 'inline';
+      });
+      check.addEventListener('mouseout', () => {
+        circle.style.display = 'inline';
+        check.style.display = 'none';
+      });
+
       const title = document.createElement('div');
       title.className = 'title';
       title.append(editorTitle);
