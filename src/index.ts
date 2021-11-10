@@ -6,6 +6,7 @@ const content = document.querySelector('#content');
 content.append(editor());
 content.append(tasks());
 
+// make editor same size as tasks
 // tab icon
 // tab styling
 // drag and drop
