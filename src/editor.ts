@@ -29,18 +29,18 @@ export default () => {
     }
   });
 
-  const description = document.createElement('textarea');
-  description.className = 'description';
-  description.placeholder = 'Description';
-  description.rows = 1;
-  right.append(description);
+  const desc = document.createElement('textarea');
+  desc.className = 'desc';
+  desc.placeholder = 'Description';
+  desc.rows = 1;
+  right.append(desc);
 
   function changeHeight() {
     this.style.height = 0;
     this.style.height = `${this.scrollHeight}px`;
   }
   title.addEventListener('input', changeHeight);
-  description.addEventListener('input', changeHeight);
+  desc.addEventListener('input', changeHeight);
 
   return editor;
 };

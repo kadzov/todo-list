@@ -43,14 +43,14 @@ export default () => {
       title.append(editorTitle);
       right.append(title);
 
-      const descriptionTitle = (
-        document.querySelector('.description') as HTMLInputElement
+      const editorDesc = (
+        document.querySelector('.desc') as HTMLInputElement
       ).value;
-      if (descriptionTitle) {
-        const description = document.createElement('div');
-        description.className = 'description';
-        description.append(descriptionTitle);
-        right.append(description);
+      if (editorDesc) {
+        const desc = document.createElement('div');
+        desc.className = 'desc';
+        desc.append(editorDesc);
+        right.append(desc);
       }
     }
   });
