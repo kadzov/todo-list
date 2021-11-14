@@ -10,6 +10,7 @@ export default () => {
 
   const plus = document.createElement('i');
   plus.className = 'fas fa-plus';
+  plus.tabIndex = 3;
   left.append(plus);
 
   const right = document.createElement('div');
@@ -19,6 +20,7 @@ export default () => {
   const title = document.createElement('textarea');
   title.className = 'title';
   title.placeholder = 'Title';
+  title.tabIndex = 1;
   title.rows = 1;
   right.append(title);
 
@@ -32,6 +34,7 @@ export default () => {
   const desc = document.createElement('textarea');
   desc.className = 'desc';
   desc.placeholder = 'Description';
+  desc.tabIndex = 2;
   desc.rows = 1;
   right.append(desc);
 

@@ -4,8 +4,8 @@ export default () => {
   const tasks = document.createElement('div');
   tasks.id = 'tasks';
 
-  const add = document.querySelector('.fa-plus');
-  add.addEventListener('click', () => {
+  const plus = document.querySelector('.fa-plus');
+  plus.addEventListener('click', () => {
     const editorTitle = (document.querySelector('.title') as HTMLInputElement)
       .value;
     if (editorTitle) {

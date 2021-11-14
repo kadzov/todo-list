@@ -1,5 +1,12 @@
 #editor {
   padding-right: 2rem;
+  .fa-plus {
+    transition: 0.2s;
+    &:hover,
+    &:focus {
+      color: #ffd900;
+    }
+  }
   textarea {
     display: block;
     width: 100%;
