@@ -24,13 +24,6 @@ export default () => {
   title.rows = 1;
   right.append(title);
 
-  title.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter') {
-      e.preventDefault();
-      plus.click();
-    }
-  });
-
   const desc = document.createElement('textarea');
   desc.className = 'desc';
   desc.placeholder = 'Description';
@@ -44,6 +37,15 @@ export default () => {
   }
   title.addEventListener('input', changeHeight);
   desc.addEventListener('input', changeHeight);
+
+  function addTask(e: KeyboardEvent) {
+    if (e.code === 'Enter') {
+      e.preventDefault();
+      plus.click();
+    }
+  }
+  title.addEventListener('keydown', addTask);
+  plus.addEventListener('keydown', addTask);
 
   return editor;
 };
