@@ -52,17 +52,17 @@ export default () => {
   plus.addEventListener('keydown', addTask);
 
   plus.addEventListener('click', () => {
-    const task = document.createElement('div');
+    const task = newTask.cloneNode(true) as Element;
     tasks.append(task);
     task.className = 'task';
 
-    //   const circle = document.createElement('i');
-    //   circle.className = 'far fa-circle';
-    //   left.append(circle);
+    const circle = document.createElement('i');
+    circle.className = 'far fa-circle';
+    left.append(circle);
 
-    //   const check = document.createElement('i');
-    //   check.className = 'far fa-check-circle';
-    //   left.append(check);
+    const check = document.createElement('i');
+    check.className = 'far fa-check-circle';
+    left.append(check);
 
     //   circle.addEventListener('mouseover', () => {
     //     circle.style.display = 'none';
