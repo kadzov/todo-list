@@ -1,51 +1,54 @@
 $color: #0077ff;
 $space: 1.5rem;
 
-#new-task {
-  display: flex;
-  padding-right: 2rem;
-  border-radius: 1rem;
-  &,
-  * {
-    background-color: #2b2b2b;
-  }
-  .left {
-    margin: $space;
-    .fa-plus {
-      transition: 0.2s;
-      &:hover,
-      &:focus {
-        color: $color;
+#tasks {
+  margin: $space;
+  #new-task {
+    display: flex;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    &,
+    * {
+      background-color: #2b2b2b;
+    }
+    .left {
+      margin: $space;
+      .fa-plus {
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          color: $color;
+        }
       }
     }
-  }
-  .right {
-    width: 100%;
-    textarea {
-      display: block;
+    .right {
       width: 100%;
-      resize: none;
-      &::placeholder {
-        color: #bbb;
+      textarea {
+        display: block;
+        width: 100%;
+        resize: none;
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+      .title {
+        padding-top: $space;
+        font-weight: 500;
+      }
+      .desc {
+        padding-bottom: $space;
       }
     }
-    .title {
-      padding-top: $space;
-      font-weight: 500;
-    }
-    .desc {
-      padding-bottom: $space;
+  }
+  .task {
+    margin-top: 1.5rem;
+    white-space: pre-wrap;
+    .fa-check-circle {
+      display: none;
     }
   }
-}
-.task {
-  margin-top: 1.5rem;
-  white-space: pre-wrap;
-  .fa-check-circle {
-    display: none;
+  i {
+    cursor: pointer;
+    user-select: none;
   }
-}
-i {
-  cursor: pointer;
-  user-select: none;
 }
