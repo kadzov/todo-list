@@ -2,20 +2,39 @@ $color: #0077ff;
 $space: 1.5rem;
 
 #new-task {
+  display: flex;
   padding-right: 2rem;
-  .fa-plus {
-    transition: 0.2s;
-    &:hover,
-    &:focus {
-      color: $color;
+  border-radius: 1rem;
+  &,
+  * {
+    background-color: #2b2b2b;
+  }
+  .left {
+    margin: $space;
+    .fa-plus {
+      transition: 0.2s;
+      &:hover,
+      &:focus {
+        color: $color;
+      }
     }
   }
-  textarea {
-    display: block;
+  .right {
     width: 100%;
-    resize: none;
-    &::placeholder {
-      color: #bbb;
+    textarea {
+      display: block;
+      width: 100%;
+      resize: none;
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+    .title {
+      padding-top: $space;
+      font-weight: 500;
+    }
+    .desc {
+      padding-bottom: $space;
     }
   }
 }
@@ -26,30 +45,7 @@ $space: 1.5rem;
     display: none;
   }
 }
-#new-task,
-#new-task *,
-.task {
-  background-color: #2b2b2b;
-}
-#new-task,
-.task {
-  display: flex;
-  border-radius: 1rem;
-}
-.fa-plus {
+i {
   cursor: pointer;
   user-select: none;
-}
-.left {
-  margin: $space;
-}
-.right {
-  width: 100%;
-}
-.title {
-  padding-top: $space;
-  font-weight: 500;
-}
-.desc {
-  padding-bottom: $space;
 }

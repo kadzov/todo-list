@@ -7,6 +7,7 @@ export default () => {
   const newTask = document.createElement('div');
   tasks.append(newTask);
   newTask.id = 'new-task';
+  newTask.className = 'task';
 
   const left = document.createElement('div');
   newTask.append(left);
