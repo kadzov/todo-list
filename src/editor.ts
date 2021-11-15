@@ -5,31 +5,31 @@ export default () => {
   editor.id = 'editor';
 
   const left = document.createElement('div');
-  left.className = 'left';
   editor.append(left);
+  left.className = 'left';
 
   const plus = document.createElement('i');
+  left.append(plus);
   plus.className = 'fas fa-plus';
   plus.tabIndex = 3;
-  left.append(plus);
 
   const right = document.createElement('div');
-  right.className = 'right';
   editor.append(right);
+  right.className = 'right';
 
   const title = document.createElement('textarea');
+  right.append(title);
   title.className = 'title';
   title.placeholder = 'Title';
   title.tabIndex = 1;
   title.rows = 1;
-  right.append(title);
 
   const desc = document.createElement('textarea');
+  right.append(desc);
   desc.className = 'desc';
   desc.placeholder = 'Description';
   desc.tabIndex = 2;
   desc.rows = 1;
-  right.append(desc);
 
   function changeHeight() {
     this.style.height = 0;
