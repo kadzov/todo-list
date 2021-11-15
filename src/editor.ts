@@ -27,6 +27,7 @@ export default () => {
 
   const desc = document.createElement('textarea');
   right.append(desc);
+  desc.className = 'desc';
   desc.placeholder = 'Description';
   desc.rows = 1;
 
@@ -38,38 +39,33 @@ export default () => {
   desc.addEventListener('input', changeHeight);
 
   function addTask() {
-    const taskCopy = task.cloneNode(true) as Element;
-    list.insertBefore(taskCopy, task.nextSibling);
+    if (title.value) {
+      const taskCopy = task.cloneNode(true) as Element;
+      list.insertBefore(taskCopy, task.nextSibling);
 
-    document.querySelectorAll('.fa-plus')[1].remove();
-    const leftCopy = document.querySelectorAll('.left')[1]
+      document.querySelectorAll('.fa-plus')[1].remove();
+      const leftCopy = document.querySelectorAll('.left')[1];
+      if (!desc.value) {
+        document.querySelectorAll('.desc')[1].remove();
+      }
 
-    const circle = document.createElement('button');
-    leftCopy.append(circle);
-    circle.className = 'far fa-circle';
+      const circle = document.createElement('button');
+      leftCopy.append(circle);
+      circle.className = 'far fa-circle';
 
-    const check = document.createElement('button');
-    leftCopy.append(check);
-    check.className = 'far fa-check-circle';
+      const check = document.createElement('button');
+      leftCopy.append(check);
+      check.className = 'far fa-check-circle';
 
-    circle.addEventListener('mouseover', () => {
-      circle.style.display = 'none';
-      check.style.display = 'inline';
-    });
-    check.addEventListener('mouseout', () => {
-      circle.style.display = 'inline';
-      check.style.display = 'none';
-    });
-
-    //   const editorDesc = (document.querySelector('.desc') as HTMLInputElement)
-    //     .value;
-    //   if (editorDesc) {
-    //     const desc = document.createElement('div');
-    //     desc.className = 'desc';
-    //     desc.append(editorDesc);
-    //     right.append(desc);
-    //   }
-    // }
+      circle.addEventListener('mouseover', () => {
+        circle.style.display = 'none';
+        check.style.display = 'inline';
+      });
+      check.addEventListener('mouseout', () => {
+        circle.style.display = 'inline';
+        check.style.display = 'none';
+      });
+    }
   }
   plus.addEventListener('click', addTask);
   title.addEventListener('keydown', (e) => {
