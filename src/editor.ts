@@ -1,11 +1,11 @@
 import './editor.scss';
 
 export default () => {
-  const editor = document.createElement('div');
-  editor.id = 'editor';
+  const newTask = document.createElement('div');
+  newTask.id = 'new-task';
 
   const left = document.createElement('div');
-  editor.append(left);
+  newTask.append(left);
   left.className = 'left';
 
   const plus = document.createElement('i');
@@ -14,7 +14,7 @@ export default () => {
   plus.tabIndex = 3;
 
   const right = document.createElement('div');
-  editor.append(right);
+  newTask.append(right);
   right.className = 'right';
 
   const title = document.createElement('textarea');
@@ -47,5 +47,5 @@ export default () => {
   title.addEventListener('keydown', addTask);
   plus.addEventListener('keydown', addTask);
 
-  return editor;
+  return newTask;
 };

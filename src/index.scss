@@ -24,12 +24,12 @@ body {
   margin: auto;
   max-width: 60rem;
 }
-#editor,
-#editor *,
+#new-task,
+#new-task *,
 .task {
   background-color: #2b2b2b;
 }
-#editor,
+#new-task,
 .task {
   display: flex;
   border-radius: 1rem;
