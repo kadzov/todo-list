@@ -37,31 +37,20 @@ export default () => {
   title.addEventListener('input', changeHeight);
   desc.addEventListener('input', changeHeight);
 
-  function addTask(e: KeyboardEvent) {
-    if (e.code === 'Enter') {
-      e.preventDefault();
-      plus.click();
-    }
-  }
-  title.addEventListener('keydown', addTask);
-  plus.addEventListener('keydown', addTask);
+  function addTask() {
+    const taskCopy = task.cloneNode(true) as Element;
+    list.insertBefore(taskCopy, task.nextSibling);
 
-  function addTask(element)
-  ['click', 'keydown'].forEach((i) => i.addEventListener());
-
-  plus.addEventListener('click', () => {
-    const newTask = task.cloneNode(true) as Element;
-    list.append(newTask);
+    document.querySelectorAll('.fa-plus')[1].remove();
+    const leftCopy = document.querySelectorAll('.left')[1]
 
     const circle = document.createElement('button');
+    leftCopy.append(circle);
     circle.className = 'far fa-circle';
-    const left = list.lastChild.firstChild as Element;
-    list.lastChild.firstChild.firstChild.remove();
-    left.append(circle);
 
     const check = document.createElement('button');
+    leftCopy.append(check);
     check.className = 'far fa-check-circle';
-    left.append(check);
 
     circle.addEventListener('mouseover', () => {
       circle.style.display = 'none';
@@ -81,6 +70,13 @@ export default () => {
     //     right.append(desc);
     //   }
     // }
+  }
+  plus.addEventListener('click', addTask);
+  title.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+      e.preventDefault();
+      addTask();
+    }
   });
 
   return list;
