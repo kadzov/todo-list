@@ -4,6 +4,7 @@ import editor from './editor';
 const content = document.querySelector('#content');
 content.append(editor());
 
+// create empty task and then append
 // border: 0.1rem solid $color;
 // tab icon
 // tab styling

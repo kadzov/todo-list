@@ -22,6 +22,7 @@ export default () => {
 
   const title = document.createElement('textarea');
   right.append(title);
+  title.className = 'title';
   title.placeholder = 'Title';
   title.rows = 1;
 
@@ -67,6 +68,7 @@ export default () => {
       });
     }
   }
+
   plus.addEventListener('click', addTask);
   title.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
