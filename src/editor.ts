@@ -13,10 +13,9 @@ export default () => {
   newTask.append(left);
   left.className = 'left';
 
-  const plus = document.createElement('i');
+  const plus = document.createElement('button');
   left.append(plus);
   plus.className = 'fas fa-plus';
-  plus.tabIndex = 3;
 
   const right = document.createElement('div');
   newTask.append(right);
@@ -26,14 +25,12 @@ export default () => {
   right.append(title);
   title.className = 'title';
   title.placeholder = 'Title';
-  title.tabIndex = 1;
   title.rows = 1;
 
   const desc = document.createElement('textarea');
   right.append(desc);
   desc.className = 'desc';
   desc.placeholder = 'Description';
-  desc.tabIndex = 2;
   desc.rows = 1;
 
   function changeHeight() {
@@ -57,13 +54,13 @@ export default () => {
     tasks.append(task);
     task.className = 'task';
 
-    const circle = document.createElement('i');
+    const circle = document.createElement('button');
     circle.className = 'far fa-circle';
     const left = tasks.lastChild.firstChild as Element;
     tasks.lastChild.firstChild.firstChild.remove();
     left.append(circle);
 
-    const check = document.createElement('i');
+    const check = document.createElement('button');
     check.className = 'far fa-check-circle';
     left.append(check);
 
