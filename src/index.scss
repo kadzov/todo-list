@@ -21,3 +21,12 @@ body {
   margin: auto;
   max-width: 60rem;
 }
+button {
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+  &:hover,
+  &:focus {
+    color: #0077ff;
+  }
+}
