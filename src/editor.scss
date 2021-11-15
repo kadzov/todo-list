@@ -1,15 +1,13 @@
 $space: 1.5rem;
 
-#tasks {
+#list {
   margin: $space;
-  .task {
-    margin-top: 1.5rem;
-    .fa-check-circle {
-      display: none;
-    }
+  .fa-check-circle {
+    display: none;
   }
-  #new-task {
+  .task {
     display: flex;
+    margin-top: 1.5rem;
     border-radius: 1rem;
     padding-right: 2rem;
     &,

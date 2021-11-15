@@ -1,16 +1,15 @@
 import './editor.scss';
 
 export default () => {
-  const tasks = document.createElement('div');
-  tasks.id = 'tasks';
+  const list = document.createElement('div');
+  list.id = 'list';
 
-  const newTask = document.createElement('div');
-  tasks.append(newTask);
-  newTask.id = 'new-task';
-  newTask.className = 'task';
+  const task = document.createElement('div');
+  list.append(task);
+  task.className = 'task';
 
   const left = document.createElement('div');
-  newTask.append(left);
+  task.append(left);
   left.className = 'left';
 
   const plus = document.createElement('button');
@@ -18,7 +17,7 @@ export default () => {
   plus.className = 'fas fa-plus';
 
   const right = document.createElement('div');
-  newTask.append(right);
+  task.append(right);
   right.className = 'right';
 
   const title = document.createElement('textarea');
@@ -50,14 +49,13 @@ export default () => {
   plus.addEventListener('keydown', addTask);
 
   plus.addEventListener('click', () => {
-    const task = newTask.cloneNode(true) as Element;
-    tasks.append(task);
-    task.className = 'task';
+    const task = task.cloneNode(true) as Element;
+    list.append(task);
 
     const circle = document.createElement('button');
     circle.className = 'far fa-circle';
-    const left = tasks.lastChild.firstChild as Element;
-    tasks.lastChild.firstChild.firstChild.remove();
+    const left = list.lastChild.firstChild as Element;
+    list.lastChild.firstChild.firstChild.remove();
     left.append(circle);
 
     const check = document.createElement('button');
@@ -84,5 +82,5 @@ export default () => {
     // }
   });
 
-  return tasks;
+  return list;
 };
