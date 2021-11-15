@@ -1,10 +1,8 @@
 import './index.scss';
 import editor from './editor';
-import tasks from './tasks';
 
 const content = document.querySelector('#content');
 content.append(editor());
-content.append(tasks());
 
 // tab icon
 // tab styling
