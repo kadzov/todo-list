@@ -1,8 +1,8 @@
-$color:#0077ff;
+$color: #0077ff;
+$space: 1.5rem;
 
 #new-task {
   padding-right: 2rem;
-  border: 0.1rem solid $color;
   .fa-plus {
     transition: 0.2s;
     &:hover,
@@ -26,4 +26,30 @@ $color:#0077ff;
     display: none;
   }
 }
-
+#new-task,
+#new-task *,
+.task {
+  background-color: #2b2b2b;
+}
+#new-task,
+.task {
+  display: flex;
+  border-radius: 1rem;
+}
+.fa-plus {
+  cursor: pointer;
+  user-select: none;
+}
+.left {
+  margin: $space;
+}
+.right {
+  width: 100%;
+}
+.title {
+  padding-top: $space;
+  font-weight: 500;
+}
+.desc {
+  padding-bottom: $space;
+}

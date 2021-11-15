@@ -1,5 +1,3 @@
-$space: 1.5rem;
-
 * {
   margin: 0;
   padding: 0;
@@ -17,37 +15,9 @@ html {
   font-size: 62.5%;
 }
 body {
-  margin: $space;
   background-color: #1b1b1b;
 }
 #content {
   margin: auto;
   max-width: 60rem;
-}
-#new-task,
-#new-task *,
-.task {
-  background-color: #2b2b2b;
-}
-#new-task,
-.task {
-  display: flex;
-  border-radius: 1rem;
-}
-.fa-plus {
-  cursor: pointer;
-  user-select: none;
-}
-.left {
-  margin: $space;
-}
-.right {
-  width: 100%;
-}
-.title {
-  padding-top: $space;
-  font-weight: 500;
-}
-.desc {
-  padding-bottom: $space;
 }

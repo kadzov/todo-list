@@ -59,6 +59,7 @@ export default () => {
     const circle = document.createElement('i');
     circle.className = 'far fa-circle';
     const left = tasks.lastChild.firstChild as Element;
+    tasks.lastChild.firstChild.firstChild.remove();
     left.append(circle);
 
     const check = document.createElement('i');
