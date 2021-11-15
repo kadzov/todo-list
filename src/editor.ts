@@ -22,13 +22,11 @@ export default () => {
 
   const title = document.createElement('textarea');
   right.append(title);
-  title.className = 'title';
   title.placeholder = 'Title';
   title.rows = 1;
 
   const desc = document.createElement('textarea');
   right.append(desc);
-  desc.className = 'desc';
   desc.placeholder = 'Description';
   desc.rows = 1;
 
@@ -48,9 +46,12 @@ export default () => {
   title.addEventListener('keydown', addTask);
   plus.addEventListener('keydown', addTask);
 
+  function addTask(element)
+  ['click', 'keydown'].forEach((i) => i.addEventListener());
+
   plus.addEventListener('click', () => {
-    const task = task.cloneNode(true) as Element;
-    list.append(task);
+    const newTask = task.cloneNode(true) as Element;
+    list.append(newTask);
 
     const circle = document.createElement('button');
     circle.className = 'far fa-circle';
