@@ -58,29 +58,21 @@ export default () => {
 
     const circle = document.createElement('i');
     circle.className = 'far fa-circle';
+    const left = tasks.lastChild.firstChild as Element;
     left.append(circle);
 
     const check = document.createElement('i');
     check.className = 'far fa-check-circle';
     left.append(check);
 
-    //   circle.addEventListener('mouseover', () => {
-    //     circle.style.display = 'none';
-    //     check.style.display = 'inline';
-    //   });
-    //   check.addEventListener('mouseout', () => {
-    //     circle.style.display = 'inline';
-    //     check.style.display = 'none';
-    //   });
-
-    //   const right = document.createElement('div');
-    //   right.className = 'right';
-    //   task.append(right);
-
-    //   const title = document.createElement('div');
-    //   title.className = 'title';
-    //   title.append(editorTitle);
-    //   right.append(title);
+    circle.addEventListener('mouseover', () => {
+      circle.style.display = 'none';
+      check.style.display = 'inline';
+    });
+    check.addEventListener('mouseout', () => {
+      circle.style.display = 'inline';
+      check.style.display = 'none';
+    });
 
     //   const editorDesc = (document.querySelector('.desc') as HTMLInputElement)
     //     .value;
