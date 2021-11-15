@@ -11,21 +11,14 @@ $space: 1.5rem;
   }
   #new-task {
     display: flex;
-    padding-right: 2rem;
     border-radius: 1rem;
+    padding-right: 2rem;
     &,
     * {
       background-color: #2b2b2b;
     }
     .left {
       margin: $space;
-      .fa-plus {
-        transition: 0.2s;
-        &:hover,
-        &:focus {
-          color: $color;
-        }
-      }
     }
     .right {
       width: 100%;
@@ -46,8 +39,13 @@ $space: 1.5rem;
       }
     }
   }
-  i {
+  button {
     cursor: pointer;
     user-select: none;
+    transition: 0.2s;
+    &:hover,
+    &:focus {
+      color: $color;
+    }
   }
 }
