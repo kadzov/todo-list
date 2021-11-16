@@ -24,7 +24,6 @@ body {
 button {
   cursor: pointer;
   user-select: none;
-  transition: 0.2s;
   &:hover,
   &:focus {
     color: #0077ff;
