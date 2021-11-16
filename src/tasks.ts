@@ -1,4 +1,4 @@
-import './editor.scss';
+import './tasks.scss';
 
 export default () => {
   const list = document.createElement('div');
@@ -46,10 +46,9 @@ export default () => {
 
     if (title.value) {
       list.insertBefore(task.cloneNode(true) as HTMLElement, task.nextSibling);
-      selectElement('.fa-plus').remove();
-
       selectElement('.title').addEventListener('input', changeHeight);
       selectElement('.desc').addEventListener('input', changeHeight);
+      selectElement('.fa-plus').remove();
 
       if (!desc.value) {
         selectElement('.desc').style.display = 'none';

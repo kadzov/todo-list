@@ -1,10 +1,10 @@
 import './index.scss';
-import editor from './editor';
+import tasks from './tasks';
 
 const content = document.querySelector('#content');
-content.append(editor());
+content.append(tasks());
 
-// create empty task and then append
+// change circle to plus in editor mode
 // align width
 // border: 0.1rem solid $color;
 // tab icon
