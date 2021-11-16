@@ -1,4 +1,4 @@
-$space: 1.5rem;
+$space: 1.8rem;
 
 #list {
   margin: $space;
@@ -28,10 +28,12 @@ $space: 1.5rem;
         }
         &:first-child {
           padding-top: $space;
+          padding-bottom: $space / 3;
           font-weight: 500;
         }
         &:last-child {
           padding-bottom: $space;
+          padding-top: $space / 3;
         }
       }
     }

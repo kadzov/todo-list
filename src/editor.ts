@@ -40,28 +40,35 @@ export default () => {
   desc.addEventListener('input', changeHeight);
 
   function addTask() {
-    if (title.value) {
-      const taskCopy = task.cloneNode(true) as Element;
-      list.insertBefore(taskCopy, task.nextSibling);
+    function selectElement(className: string) {
+      return document.querySelectorAll(className)[1] as HTMLElement;
+    }
 
-      document.querySelectorAll('.fa-plus')[1].remove();
-      const leftCopy = document.querySelectorAll('.left')[1];
+    if (title.value) {
+      list.insertBefore(task.cloneNode(true) as HTMLElement, task.nextSibling);
+      selectElement('.fa-plus').remove();
+
+      selectElement('.title').addEventListener('input', changeHeight);
+      selectElement('.desc').addEventListener('input', changeHeight);
+
       if (!desc.value) {
-        document.querySelectorAll('.desc')[1].remove();
+        selectElement('.desc').style.display = 'none';
+        selectElement('.title').style.height = '100%';
       }
 
       const circle = document.createElement('button');
-      leftCopy.append(circle);
+      selectElement('.left').append(circle);
       circle.className = 'far fa-circle';
 
       const check = document.createElement('button');
-      leftCopy.append(check);
+      selectElement('.left').append(check);
       check.className = 'far fa-check-circle';
 
       circle.addEventListener('mouseover', () => {
         circle.style.display = 'none';
         check.style.display = 'inline';
       });
+
       check.addEventListener('mouseout', () => {
         circle.style.display = 'inline';
         check.style.display = 'none';
