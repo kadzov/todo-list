@@ -5,8 +5,8 @@ const content = document.querySelector('#content');
 content.append(tasks());
 
 // change circle to plus in editor mode
-// align width
-// border: 0.1rem solid $color;
+// add event listener
+// align height
 // tab icon
 // tab styling
 // drag and drop
