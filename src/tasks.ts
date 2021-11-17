@@ -53,6 +53,20 @@ export default () => {
   title.addEventListener('input', changeHeight);
   desc.addEventListener('input', changeHeight);
 
+  const actions = document.createElement('div');
+  right.append(actions);
+  actions.className = 'actions';
+
+  const save = document.createElement('button');
+  actions.append(save);
+  save.className = 'save';
+  save.append('Save');
+
+  const cancel = document.createElement('button');
+  actions.append(cancel);
+  cancel.className = 'cancel';
+  cancel.append('Cancel');
+
   function addTask() {
     function selectElement(selector: string) {
       return document.querySelectorAll(selector)[1] as HTMLElement;
@@ -66,6 +80,8 @@ export default () => {
 
       const descCopy = selectElement('.desc');
       descCopy.addEventListener('input', changeHeight);
+
+      selectElement('.actions').style.display = 'none';
 
       if (!desc.value) {
         titleCopy.style.height = '100%';
@@ -81,7 +97,7 @@ export default () => {
     }
   }
 
-  circle.addEventListener('click', addTask);
+  save.addEventListener('click', addTask);
   title.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
       e.preventDefault();
