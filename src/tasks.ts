@@ -40,15 +40,15 @@ export default () => {
   desc.addEventListener('input', changeHeight);
 
   function addTask() {
-    function selectElement(className: string) {
-      return document.querySelectorAll(className)[1] as HTMLElement;
+    function selectElement(selector: string) {
+      return document.querySelectorAll(selector)[1] as HTMLElement;
     }
 
     if (title.value) {
       list.insertBefore(task.cloneNode(true) as HTMLElement, task.nextSibling);
       selectElement('.title').addEventListener('input', changeHeight);
       selectElement('.desc').addEventListener('input', changeHeight);
-      selectElement('.fa-plus').remove();
+      selectElement('.fa-plus').style.display = 'none';
 
       if (!desc.value) {
         selectElement('.desc').style.display = 'none';
@@ -71,6 +71,16 @@ export default () => {
       check.addEventListener('mouseout', () => {
         circle.style.display = 'inline';
         check.style.display = 'none';
+      });
+
+      selectElement('.title').addEventListener('focus', () => {
+        circle.style.display = 'none';
+        selectElement('.fa-plus').style.display = 'inline';
+      });
+
+      selectElement('.fa-plus').addEventListener('click', () => {
+        circle.style.display = 'inline';
+        selectElement('.fa-plus').style.display = 'none';
       });
     }
   }
