@@ -54,18 +54,11 @@ $space: 1.8rem;
           transition: 0.2s;
         }
         .save {
-          $color: #2eb12e;
+          $color: #44d800;
           border: 0.2rem solid $color;
           &:hover,
           &:focus-visible {
-            background-color: $color;
-          }
-        }
-        .cancel {
-          $color: #db2828;
-          border: 0.2rem solid $color;
-          &:hover,
-          &:focus-visible {
+          color: #000;
             background-color: $color;
           }
         }

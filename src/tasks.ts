@@ -62,11 +62,6 @@ export default () => {
   save.className = 'save';
   save.append('Save');
 
-  const cancel = document.createElement('button');
-  actions.append(cancel);
-  cancel.className = 'cancel';
-  cancel.append('Cancel');
-
   function addTask() {
     function selectElement(selector: string) {
       return document.querySelectorAll(selector)[1] as HTMLElement;
