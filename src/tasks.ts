@@ -46,21 +46,29 @@ export default () => {
 
     if (title.value) {
       list.insertBefore(task.cloneNode(true) as HTMLElement, task.nextSibling);
-      selectElement('.title').addEventListener('input', changeHeight);
-      selectElement('.desc').addEventListener('input', changeHeight);
-      selectElement('.fa-plus').style.display = 'none';
+
+      const titleCopy = selectElement('.title');
+      titleCopy.addEventListener('input', changeHeight);
+
+      const descCopy = selectElement('.desc');
+      descCopy.addEventListener('input', changeHeight);
+
+      const leftCopy = selectElement('.left');
+
+      const plusCopy = selectElement('.fa-plus');
+      plusCopy.style.display = 'none';
 
       if (!desc.value) {
-        selectElement('.desc').style.display = 'none';
-        selectElement('.title').style.height = '100%';
+        titleCopy.style.height = '100%';
+        descCopy.style.display = 'none';
       }
 
       const circle = document.createElement('button');
-      selectElement('.left').append(circle);
+      leftCopy.append(circle);
       circle.className = 'far fa-circle';
 
       const check = document.createElement('button');
-      selectElement('.left').append(check);
+      leftCopy.append(check);
       check.className = 'far fa-check-circle';
 
       circle.addEventListener('mouseover', () => {
@@ -73,14 +81,14 @@ export default () => {
         check.style.display = 'none';
       });
 
-      selectElement('.title').addEventListener('focus', () => {
+      titleCopy.addEventListener('focus', () => {
         circle.style.display = 'none';
-        selectElement('.fa-plus').style.display = 'inline';
+        plusCopy.style.display = 'inline';
       });
 
-      selectElement('.fa-plus').addEventListener('click', () => {
+      plusCopy.addEventListener('click', () => {
         circle.style.display = 'inline';
-        selectElement('.fa-plus').style.display = 'none';
+        plusCopy.style.display = 'none';
       });
     }
   }
