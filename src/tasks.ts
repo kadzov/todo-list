@@ -12,9 +12,23 @@ export default () => {
   task.append(left);
   left.className = 'left';
 
-  const plus = document.createElement('button');
-  left.append(plus);
-  plus.className = 'fas fa-plus';
+  const circle = document.createElement('button');
+  left.append(circle);
+  circle.className = 'far fa-circle';
+
+  const check = document.createElement('button');
+  left.append(check);
+  check.className = 'far fa-check-circle';
+
+  circle.addEventListener('mouseover', () => {
+    circle.style.display = 'none';
+    check.style.display = 'inline';
+  });
+
+  check.addEventListener('mouseout', () => {
+    circle.style.display = 'inline';
+    check.style.display = 'none';
+  });
 
   const right = document.createElement('div');
   task.append(right);
@@ -53,55 +67,21 @@ export default () => {
       const descCopy = selectElement('.desc');
       descCopy.addEventListener('input', changeHeight);
 
-      const leftCopy = selectElement('.left');
-
-      const plusCopy = selectElement('.fa-plus');
-      plusCopy.style.display = 'none';
-
       if (!desc.value) {
         titleCopy.style.height = '100%';
         descCopy.style.display = 'none';
       }
 
-      const circle = document.createElement('button');
-      leftCopy.append(circle);
-      circle.className = 'far fa-circle';
-
-      const check = document.createElement('button');
-      leftCopy.append(check);
-      check.className = 'far fa-check-circle';
-
-      circle.addEventListener('mouseover', () => {
-        circle.style.display = 'none';
-        check.style.display = 'inline';
-      });
-
-      check.addEventListener('mouseout', () => {
-        circle.style.display = 'inline';
-        check.style.display = 'none';
-      });
-
-      titleCopy.addEventListener('focus', () => {
-        circle.style.display = 'none';
-        plusCopy.style.display = 'inline';
-      });
-
-      plusCopy.addEventListener('click', () => {
-        circle.style.display = 'inline';
-        plusCopy.style.display = 'none';
-      });
-
       titleCopy.addEventListener('keydown', (e) => {
         if (e.code === 'Enter') {
           e.preventDefault();
           titleCopy.blur();
-          plusCopy.click();
         }
       });
     }
   }
 
-  plus.addEventListener('click', addTask);
+  circle.addEventListener('click', addTask);
   title.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
       e.preventDefault();

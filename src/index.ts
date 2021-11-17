@@ -4,7 +4,6 @@ import tasks from './tasks';
 const content = document.querySelector('#content');
 content.append(tasks());
 
-// change circle to plus in editor mode
 // add event listener
 // drag and drop
 // tab icon
