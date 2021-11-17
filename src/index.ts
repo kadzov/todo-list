@@ -4,6 +4,7 @@ import tasks from './tasks';
 const content = document.querySelector('#content');
 content.append(tasks());
 
+// outline color
 // add event listener
 // drag and drop
 // tab icon
