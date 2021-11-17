@@ -6,7 +6,7 @@ content.append(tasks());
 
 // change circle to plus in editor mode
 // add event listener
-// align height
+// drag and drop
 // tab icon
 // tab styling
 // drag and drop

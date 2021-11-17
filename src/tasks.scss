@@ -27,7 +27,9 @@ $color: #0077ff;
       }
     }
     .left {
-      margin: $space;
+      width: 6rem;
+      margin: $space 0;
+      text-align: center;
     }
     .right {
       width: 100%;
