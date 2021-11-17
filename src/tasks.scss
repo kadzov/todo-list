@@ -52,14 +52,9 @@ $space: 1.8rem;
           padding: 0.6rem 1.5rem;
           border-radius: 0.5rem;
           transition: 0.2s;
-        }
-        .save {
-          $color: #44d800;
-          border: 0.2rem solid $color;
           &:hover,
           &:focus-visible {
-          color: #000;
-            background-color: $color;
+            background-color: rgb(58, 58, 58);
           }
         }
       }
