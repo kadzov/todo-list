@@ -90,6 +90,14 @@ export default () => {
         circle.style.display = 'inline';
         plusCopy.style.display = 'none';
       });
+
+      titleCopy.addEventListener('keydown', (e) => {
+        if (e.code === 'Enter') {
+          e.preventDefault();
+          titleCopy.blur();
+          plusCopy.click();
+        }
+      });
     }
   }
 
