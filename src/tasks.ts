@@ -10,7 +10,7 @@ export default () => {
 
   const plus = document.createElement('i');
   add.append(plus);
-  plus.className = 'fas fa-plus';
+  plus.className = 'bi bi-plus-lg';
 
   const text = document.createElement('span');
   add.append(text);
@@ -29,11 +29,11 @@ export default () => {
 
     const circle = document.createElement('button');
     left.append(circle);
-    circle.className = 'far fa-circle';
+    circle.className = 'bi bi-circle';
 
     const check = document.createElement('button');
     left.append(check);
-    check.className = 'far fa-check-circle';
+    check.className = 'bi bi-check-circle';
 
     circle.addEventListener('mouseover', () => {
       circle.style.display = 'none';

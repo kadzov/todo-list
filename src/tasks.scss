@@ -21,8 +21,9 @@ $space: 1.8rem;
     width: 100%;
     border-radius: 1rem;
     text-align: left;
-    .fa-plus {
+    .bi-plus-lg {
       margin: $space;
+      display: inline-block;
     }
   }
   .task {
@@ -30,7 +31,7 @@ $space: 1.8rem;
     border-radius: 1rem;
     .left {
       margin: $space;
-      .fa-check-circle {
+      .bi-check-circle {
         display: none;
       }
     }
