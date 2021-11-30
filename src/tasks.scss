@@ -1,33 +1,33 @@
 $space: 1.8rem;
-$color: #2b2b2b;
 
+#add,
+.task,
+.task * {
+  background-color: #2b2b2b;
+}
+#add:focus-within,
+.task:focus-within {
+  box-shadow: 0 0 0 0.1rem #0077ff;
+}
 #list {
   margin: $space;
   #add {
     width: 100%;
-    background-color: $color;
     border-radius: 1rem;
     text-align: left;
     .fa-plus {
       margin: $space;
     }
   }
-  .fa-check-circle {
-    display: none;
-  }
   .task {
     display: flex;
     margin-top: 1.5rem;
     border-radius: 1rem;
-    &,
-    * {
-      background-color: $color;
-    }
-    &:focus-within {
-      box-shadow: 0 0 0 0.1rem #0077ff;
-    }
     .left {
       margin: $space;
+      .fa-check-circle {
+        display: none;
+      }
     }
     .right {
       width: 100%;
