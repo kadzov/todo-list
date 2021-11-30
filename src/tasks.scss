@@ -44,11 +44,11 @@ $space: 1.8rem;
         }
         &:first-child {
           padding-top: $space;
-          padding-bottom: $space / 3;
+          padding-bottom: calc($space / 3);
           font-weight: 500;
         }
         &:last-child {
-          padding-top: $space / 3;
+          padding-top: calc($space / 3);
           padding-bottom: $space;
         }
       }
