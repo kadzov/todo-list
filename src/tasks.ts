@@ -17,7 +17,7 @@ export default () => {
   text.append('Add task');
 
   add.addEventListener('click', () => {
-    add.remove()
+    add.remove();
 
     const task = document.createElement('div');
     list.append(task);
@@ -54,6 +54,7 @@ export default () => {
     title.className = 'title';
     title.placeholder = 'Title';
     title.rows = 1;
+    title.focus();
 
     const desc = document.createElement('textarea');
     right.append(desc);
@@ -76,45 +77,25 @@ export default () => {
     actions.append(save);
     save.className = 'save';
     save.append('Save');
+
+    save.addEventListener('click', () => {
+      if (title.value) {
+        actions.style.display = 'none';
+        if (!desc.value) {
+          title.style.height = '100%';
+          desc.style.display = 'none';
+        }
+        add.click();
+      }
+    });
+
+    title.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        e.preventDefault();
+        save.click();
+      }
+    });
   });
-
-  // function addTask() {
-  //   function selectElement(selector: string) {
-  //     return document.querySelectorAll(selector)[1] as HTMLElement;
-  //   }
-
-  //   if (title.value) {
-  //     list.insertBefore(task.cloneNode(true) as HTMLElement, task.nextSibling);
-
-  //     const titleCopy = selectElement('.title');
-  //     titleCopy.addEventListener('input', changeHeight);
-
-  //     const descCopy = selectElement('.desc');
-  //     descCopy.addEventListener('input', changeHeight);
-
-  //     selectElement('.actions').style.display = 'none';
-
-  //     if (!desc.value) {
-  //       titleCopy.style.height = '100%';
-  //       descCopy.style.display = 'none';
-  //     }
-
-  //     titleCopy.addEventListener('keydown', (e) => {
-  //       if (e.code === 'Enter') {
-  //         e.preventDefault();
-  //         titleCopy.blur();
-  //       }
-  //     });
-  //   }
-  // }
-
-  // save.addEventListener('click', addTask);
-  // title.addEventListener('keydown', (e) => {
-  //   if (e.code === 'Enter') {
-  //     e.preventDefault();
-  //     addTask();
-  //   }
-  // });
 
   return list;
 };
