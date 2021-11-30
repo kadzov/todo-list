@@ -73,15 +73,6 @@ export default () => {
     right.append(actions);
     actions.className = 'actions';
 
-    const cancel = document.createElement('button');
-    actions.append(cancel);
-    cancel.append('Cancel');
-
-    cancel.addEventListener('click', () => {
-      task.remove();
-      list.append(add);
-    });
-
     const save = document.createElement('button');
     actions.append(save);
     save.append('Save');
@@ -95,6 +86,15 @@ export default () => {
         }
         add.click();
       }
+    });
+
+    const cancel = document.createElement('button');
+    actions.append(cancel);
+    cancel.append('Cancel');
+
+    cancel.addEventListener('click', () => {
+      task.remove();
+      list.append(add);
     });
 
     title.addEventListener('keydown', (e) => {
