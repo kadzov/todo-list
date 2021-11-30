@@ -3,6 +3,7 @@ $space: 1.8rem;
 #add,
 .task {
   margin-top: 1.5rem;
+  border-radius: 1rem;
 }
 #add,
 .task,
@@ -19,7 +20,6 @@ $space: 1.8rem;
   }
   #add {
     width: 100%;
-    border-radius: 1rem;
     text-align: left;
     .bi-plus-lg {
       margin: $space;
@@ -28,16 +28,17 @@ $space: 1.8rem;
   }
   .task {
     display: flex;
-    border-radius: 1rem;
     .left {
-      margin: $space;
+      margin: $space {
+        right: 0;
+      }
       .bi-check-circle {
         display: none;
       }
     }
     .right {
       width: 100%;
-      margin-right: $space;
+      margin: 0 $space;
       textarea {
         display: block;
         width: 100%;
@@ -56,10 +57,14 @@ $space: 1.8rem;
         }
       }
       .actions {
-        margin: $space 0;
+        margin-bottom: $space;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        .icons {
+          display: flex;
+          gap: 1rem;
+        }
         button {
           padding: 0.6rem 1.5rem;
           border-radius: 1rem;
