@@ -76,7 +76,6 @@ export default () => {
 
     const icons = document.createElement('div');
     actions.append(icons);
-    icons.className = 'icons';
 
     const calendar = document.createElement('button');
     icons.append(calendar);
