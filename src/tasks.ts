@@ -77,6 +77,11 @@ export default () => {
     actions.append(cancel);
     cancel.append('Cancel');
 
+    cancel.addEventListener('click', () => {
+      task.remove();
+      list.append(add);
+    });
+
     const save = document.createElement('button');
     actions.append(save);
     save.append('Save');
@@ -102,6 +107,3 @@ export default () => {
 
   return list;
 };
-// add cancel button
-// event listener return add button
-// fix description height size
