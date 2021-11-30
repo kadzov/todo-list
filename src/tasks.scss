@@ -1,15 +1,15 @@
 $space: 1.8rem;
+$color: #2b2b2b;
 
 #list {
   margin: $space;
   #add {
-    background-color: #2b2b2b;
     width: 100%;
+    background-color: $color;
     border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    .fa-plus {
+      margin: $space;
+    }
   }
   .fa-check-circle {
     display: none;
@@ -20,7 +20,7 @@ $space: 1.8rem;
     border-radius: 1rem;
     &,
     * {
-      background-color: #2b2b2b;
+      background-color: $color;
     }
     &:focus-within {
       box-shadow: 0 0 0 0.1rem #0077ff;

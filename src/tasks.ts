@@ -4,14 +4,17 @@ export default () => {
   const list = document.createElement('div');
   list.id = 'list';
 
-  const add = document.createElement('button');
+  const add = document.createElement('div');
   list.append(add);
   add.id = 'add';
-  add.append('Add task');
 
-  const plus = document.createElement('i');
+  const plus = document.createElement('button');
   add.append(plus);
   plus.className = 'fas fa-plus';
+
+  const text = document.createElement('span');
+  add.append(text);
+  text.append('Add task');
 
   add.addEventListener('click', () => {
     const task = document.createElement('div');
