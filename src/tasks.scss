@@ -1,6 +1,10 @@
 $space: 1.8rem;
 
 #add,
+.task {
+  margin-top: 1.5rem;
+}
+#add,
 .task,
 .task * {
   background-color: #2b2b2b;
@@ -10,7 +14,9 @@ $space: 1.8rem;
   box-shadow: 0 0 0 0.1rem #0077ff;
 }
 #list {
-  margin: $space;
+  margin: $space {
+    top: 0;
+  }
   #add {
     width: 100%;
     border-radius: 1rem;
@@ -21,7 +27,6 @@ $space: 1.8rem;
   }
   .task {
     display: flex;
-    margin-top: 1.5rem;
     border-radius: 1rem;
     .left {
       margin: $space;
