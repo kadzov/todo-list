@@ -4,11 +4,11 @@ export default () => {
   const list = document.createElement('div');
   list.id = 'list';
 
-  const add = document.createElement('div');
+  const add = document.createElement('button');
   list.append(add);
   add.id = 'add';
 
-  const plus = document.createElement('button');
+  const plus = document.createElement('i');
   add.append(plus);
   plus.className = 'fas fa-plus';
 
