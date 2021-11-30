@@ -73,9 +73,12 @@ export default () => {
     right.append(actions);
     actions.className = 'actions';
 
+    const cancel = document.createElement('button');
+    actions.append(cancel);
+    cancel.append('Cancel');
+
     const save = document.createElement('button');
     actions.append(save);
-    save.className = 'save';
     save.append('Save');
 
     save.addEventListener('click', () => {
