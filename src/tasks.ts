@@ -17,6 +17,8 @@ export default () => {
   text.append('Add task');
 
   add.addEventListener('click', () => {
+    add.remove()
+
     const task = document.createElement('div');
     list.append(task);
     task.className = 'task';

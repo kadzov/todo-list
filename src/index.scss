@@ -21,3 +21,7 @@ body {
   margin: auto;
   max-width: 60rem;
 }
+button {
+  cursor: pointer;
+  user-select: none;
+}

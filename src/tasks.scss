@@ -26,10 +26,6 @@ $color: #2b2b2b;
     &:focus-within {
       box-shadow: 0 0 0 0.1rem #0077ff;
     }
-    button {
-      cursor: pointer;
-      user-select: none;
-    }
     .left {
       margin: $space;
     }
