@@ -58,8 +58,8 @@ $space: 1.8rem;
       .actions {
         margin: $space 0;
         display: flex;
-        gap: 1rem;
-        justify-content: end;
+        justify-content: space-between;
+        align-items: center;
         button {
           padding: 0.6rem 1.5rem;
           border-radius: 1rem;

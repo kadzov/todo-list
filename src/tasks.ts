@@ -73,8 +73,22 @@ export default () => {
     right.append(actions);
     actions.className = 'actions';
 
+    const icons = document.createElement('div');
+    actions.append(icons);
+
+    const calendar = document.createElement('i');
+    icons.append(calendar);
+    calendar.className = 'bi bi-calendar';
+
+    const flag = document.createElement('i');
+    icons.append(flag);
+    flag.className = 'bi bi-flag';
+
+    const pills = document.createElement('div');
+    actions.append(pills);
+
     const save = document.createElement('button');
-    actions.append(save);
+    pills.append(save);
     save.append('Save');
 
     save.addEventListener('click', () => {
@@ -89,7 +103,7 @@ export default () => {
     });
 
     const cancel = document.createElement('button');
-    actions.append(cancel);
+    pills.append(cancel);
     cancel.append('Cancel');
 
     cancel.addEventListener('click', () => {
