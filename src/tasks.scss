@@ -55,6 +55,7 @@ $space: 1.2rem;
         &:nth-child(2) {
           padding: $space;
           padding-top: calc($space / 3);
+          border-bottom-right-radius: 1rem;
         }
       }
       .actions {
