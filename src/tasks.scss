@@ -1,4 +1,4 @@
-$space: 1.2rem;
+$space: 1.5rem;
 
 #add,
 .task {
@@ -59,7 +59,7 @@ $space: 1.2rem;
         }
       }
       .actions {
-        margin: 0 $space $space 0;
+        margin: 0 $space 0.5rem 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
