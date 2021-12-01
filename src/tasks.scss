@@ -1,4 +1,4 @@
-$space: 1.8rem;
+$space: 1.3rem;
 
 #add,
 .task {
@@ -38,7 +38,7 @@ $space: 1.8rem;
     }
     .right {
       width: 100%;
-      margin: 0 $space;
+      border-radius: 0 1rem 1rem 0;
       textarea {
         display: block;
         width: 100%;
@@ -47,19 +47,23 @@ $space: 1.8rem;
           color: #bbb;
         }
         &:nth-child(1) {
-          padding: $space 1.5rem calc($space / 3) 1.5rem;
+          padding: $space;
+          padding-bottom: calc($space / 3);
+          border-top-right-radius: 1rem;
           font-weight: 500;
         }
         &:nth-child(2) {
-          padding: calc($space / 3) 1.5rem $space 1.5rem;
+          padding: $space;
+          padding-top: calc($space / 3);
         }
       }
       .actions {
-        margin-bottom: $space;
+        margin: 0 $space $space 0;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         button {
-          padding: 0.6rem 1.5rem;
+          padding: 1rem $space;
           border-radius: 1rem;
           transition: 0.2s;
           &:hover,
