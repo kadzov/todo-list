@@ -61,15 +61,21 @@ $space: 1.3rem;
         margin: 0 $space $space 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
-        button {
+        button:hover,
+        button:focus-visible {
+          background-color: #3a3a3a;
+        }
+        .pill {
           padding: 1rem $space;
           border-radius: 1rem;
-          transition: 0.2s;
-          &:hover,
-          &:focus-visible {
-            background-color: #3a3a3a;
-          }
+        }
+        .bi-calendar,
+        .bi-flag {
+          padding: 1rem;
+          border-radius: 50%;
+          width: 4.4rem;
         }
       }
     }

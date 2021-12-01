@@ -79,6 +79,7 @@ export default () => {
     const save = document.createElement('button');
     pills.append(save);
     save.append('Save');
+    save.className = 'pill';
 
     save.addEventListener('click', () => {
       if (title.value) {
@@ -101,6 +102,7 @@ export default () => {
     const cancel = document.createElement('button');
     pills.append(cancel);
     cancel.append('Cancel');
+    cancel.className = 'pill';
 
     cancel.addEventListener('click', () => {
       task.remove();
