@@ -60,7 +60,7 @@ $space: 1.8rem;
         margin-bottom: $space;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        flex-direction: row-reverse;
         button {
           padding: 0.6rem 1.5rem;
           border-radius: 1rem;

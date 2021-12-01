@@ -26,7 +26,6 @@ export default () => {
     const left = document.createElement('div');
     task.append(left);
     left.className = 'left';
-    left.style.display = 'none';
 
     const circle = document.createElement('button');
     left.append(circle);
@@ -94,7 +93,6 @@ export default () => {
 
     save.addEventListener('click', () => {
       if (title.value) {
-        left.style.display = 'block';
         actions.style.display = 'none';
         if (!desc.value) {
           title.style.height = '100%';
