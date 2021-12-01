@@ -73,17 +73,6 @@ export default () => {
     right.append(actions);
     actions.className = 'actions';
 
-    const icons = document.createElement('div');
-    actions.append(icons);
-
-    const calendar = document.createElement('button');
-    icons.append(calendar);
-    calendar.className = 'bi bi-calendar';
-
-    const flag = document.createElement('button');
-    icons.append(flag);
-    flag.className = 'bi bi-flag';
-
     const pills = document.createElement('div');
     actions.append(pills);
 
@@ -102,6 +91,13 @@ export default () => {
       }
     });
 
+    title.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        e.preventDefault();
+        save.click();
+      }
+    });
+
     const cancel = document.createElement('button');
     pills.append(cancel);
     cancel.append('Cancel');
@@ -111,12 +107,16 @@ export default () => {
       list.append(add);
     });
 
-    title.addEventListener('keydown', (e) => {
-      if (e.code === 'Enter') {
-        e.preventDefault();
-        save.click();
-      }
-    });
+    const icons = document.createElement('div');
+    actions.append(icons);
+
+    const calendar = document.createElement('button');
+    icons.append(calendar);
+    calendar.className = 'bi bi-calendar';
+
+    const flag = document.createElement('button');
+    icons.append(flag);
+    flag.className = 'bi bi-flag';
   });
 
   return list;
