@@ -18,13 +18,6 @@ $space: 1.5rem;
 .task:focus-within {
   box-shadow: 0 0 0 0.1rem #0077ff;
 }
-button {
-  padding: 0.7rem;
-  &:hover,
-  &:focus-visible {
-    filter: brightness(120%);
-  }
-}
 .bi {
   border-radius: 50%;
   width: 3.8rem;
@@ -40,10 +33,18 @@ button {
     .bi-plus-lg {
       margin: $space;
       display: inline-block;
+      width: 2.4rem;
     }
   }
   .task {
     display: flex;
+    button {
+      padding: 0.7rem;
+      &:hover,
+      &:focus-visible {
+        filter: brightness(120%);
+      }
+    }
     .left {
       margin: calc($space - 0.7rem);
       .bi-check-circle {

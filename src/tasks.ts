@@ -31,6 +31,15 @@ export default () => {
     left.append(circle);
     circle.className = 'bi bi-circle';
 
+    circle.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        task.remove();
+        if (!list.contains(add)) {
+          list.append(add);
+        }
+      }
+    });
+
     const check = document.createElement('button');
     left.append(check);
     check.className = 'bi bi-check-circle';
