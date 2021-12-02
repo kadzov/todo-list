@@ -18,13 +18,25 @@ $space: 1.5rem;
 .task:focus-within {
   box-shadow: 0 0 0 0.1rem #0077ff;
 }
+button {
+  padding: 0.7rem;
+  &:hover,
+  &:focus-visible {
+    filter: brightness(120%);
+  }
+}
+.bi {
+  border-radius: 50%;
+  width: 3.8rem;
+}
 #list {
   margin: $space {
     top: 0;
   }
   #add {
     width: 100%;
-    text-align: left;
+    display: flex;
+    align-items: center;
     .bi-plus-lg {
       margin: $space;
       display: inline-block;
@@ -33,9 +45,7 @@ $space: 1.5rem;
   .task {
     display: flex;
     .left {
-      margin: $space {
-        right: 0.1rem;
-      }
+      margin: calc($space - 0.7rem);
       .bi-check-circle {
         display: none;
       }
@@ -47,6 +57,7 @@ $space: 1.5rem;
         display: block;
         width: 100%;
         padding: $space;
+        padding-left: 0;
         border-radius: 0 1rem 1rem 0;
         resize: none;
         &::placeholder {
@@ -61,24 +72,13 @@ $space: 1.5rem;
         }
       }
       .actions {
-        margin: 0 $space 0.5rem 0;
+        margin: 0 $space 0.5rem -0.7rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        button:hover,
-        button:focus-visible {
-          filter: brightness(120%);
-        }
         .pill {
-          padding: 0.7rem $space;
           border-radius: 1rem;
-        }
-        .bi-calendar,
-        .bi-flag {
-          padding: 0.7rem;
-          border-radius: 50%;
-          width: 3.8rem;
         }
       }
     }
