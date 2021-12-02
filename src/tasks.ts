@@ -35,6 +35,13 @@ export default () => {
     left.append(check);
     check.className = 'bi bi-check-circle';
 
+    check.addEventListener('click', () => {
+      task.remove();
+      if (!list.contains(add)) {
+        list.append(add);
+      }
+    });
+
     circle.addEventListener('mouseover', () => {
       circle.style.display = 'none';
       check.style.display = 'inline';
@@ -106,7 +113,9 @@ export default () => {
 
     cancel.addEventListener('click', () => {
       task.remove();
-      list.append(add);
+      if (!list.contains(add)) {
+        list.append(add);
+      }
     });
 
     const icons = document.createElement('div');
