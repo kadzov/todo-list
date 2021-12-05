@@ -1,7 +1,7 @@
 import './index.scss';
 import tasks from './tasks';
 
-const content = document.querySelector('#content');
+const content = document.querySelector('.content');
 content.append(tasks());
 
 // outline color

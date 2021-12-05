@@ -1,6 +1,6 @@
 $space: 1.5rem;
 
-#add,
+.add,
 .task {
   margin-top: 1.5rem;
   border-radius: 1rem;
@@ -9,12 +9,12 @@ $space: 1.5rem;
     filter: brightness(120%);
   }
 }
-#add,
+.add,
 .task,
 .task * {
   background-color: #2b2b2b;
 }
-#add:focus-within,
+.add:focus-within,
 .task:focus-within {
   box-shadow: 0 0 0 0.1rem #0077ff;
 }
@@ -22,11 +22,11 @@ $space: 1.5rem;
   border-radius: 50%;
   width: 3.8rem;
 }
-#list {
+.list {
   margin: $space {
     top: 0;
   }
-  #add {
+  .add {
     width: 100%;
     display: flex;
     align-items: center;

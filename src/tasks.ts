@@ -2,11 +2,11 @@ import './tasks.scss';
 
 export default () => {
   const list = document.createElement('div');
-  list.id = 'list';
+  list.className = 'list';
 
   const add = document.createElement('button');
   list.append(add);
-  add.id = 'add';
+  add.className = 'add';
 
   const plus = document.createElement('i');
   add.append(plus);
