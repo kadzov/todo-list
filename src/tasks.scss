@@ -2,34 +2,23 @@ $space: 1.5rem;
 
 .add,
 .task {
-  margin-top: 1.5rem;
+  display: flex;
+  margin-top: $space;
   border-radius: 1rem;
+  &,
+  & * {
+    background-color: #2b2b2b;
+  }
   &:hover,
   &:focus-within {
     filter: brightness(120%);
   }
-}
-.add,
-.task,
-.task * {
-  background-color: #2b2b2b;
-}
-.add:focus-within,
-.task:focus-within {
-  box-shadow: 0 0 0 0.1rem #0077ff;
-}
-.bi {
-  border-radius: 50%;
-  width: 3.8rem;
-}
-.list {
-  margin: $space {
-    top: 0;
+  &:focus-within {
+    box-shadow: 0 0 0 0.1rem #0077ff;
   }
 }
 .add {
   width: 100%;
-  display: flex;
   align-items: center;
 }
 .bi-plus-lg {
@@ -37,11 +26,9 @@ $space: 1.5rem;
   display: inline-block;
   width: 2.4rem;
 }
-.task {
-  display: flex;
-}
 button {
   padding: 0.7rem;
+  border-radius: 1rem;
   &:hover,
   &:focus-visible {
     filter: brightness(120%);
@@ -83,7 +70,7 @@ textarea {
   flex-wrap: wrap;
 }
 .pill {
-  border-radius: 1rem;
+  // border-radius: 1rem;
 }
 .icons {
   display: flex;
