@@ -27,16 +27,20 @@ export default () => {
     task.append(left);
     left.className = 'left';
 
+    function completeTask() {
+      task.remove();
+      if (!list.contains(add)) {
+        list.append(add);
+      }
+    }
+
     const circle = document.createElement('button');
     left.append(circle);
     circle.className = 'bi bi-circle';
 
     circle.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
-        task.remove();
-        if (!list.contains(add)) {
-          list.append(add);
-        }
+        completeTask();
       }
     });
 
@@ -45,10 +49,7 @@ export default () => {
     check.className = 'bi bi-check-circle';
 
     check.addEventListener('click', () => {
-      task.remove();
-      if (!list.contains(add)) {
-        list.append(add);
-      }
+      completeTask();
     });
 
     circle.addEventListener('mouseover', () => {
@@ -65,11 +66,17 @@ export default () => {
     task.append(right);
     right.className = 'right';
 
+    function changeHeight() {
+      this.style.height = 0;
+      this.style.height = `${this.scrollHeight}px`;
+    }
+
     const title = document.createElement('textarea');
     right.append(title);
     title.className = 'title';
     title.placeholder = 'Title';
     title.rows = 1;
+    title.addEventListener('input', changeHeight);
     title.focus();
 
     const desc = document.createElement('textarea');
@@ -77,12 +84,6 @@ export default () => {
     desc.className = 'desc';
     desc.placeholder = 'Description';
     desc.rows = 1;
-
-    function changeHeight() {
-      this.style.height = 0;
-      this.style.height = `${this.scrollHeight}px`;
-    }
-    title.addEventListener('input', changeHeight);
     desc.addEventListener('input', changeHeight);
 
     const actions = document.createElement('div');
