@@ -134,9 +134,23 @@ export default () => {
     icons.append(calendar);
     calendar.className = 'bi bi-calendar';
 
-    const flag = document.createElement('button');
+    const flag = document.createElement('div');
     icons.append(flag);
-    flag.className = 'bi bi-flag';
+    flag.style.display = 'inline-block';
+
+    const flagButton = document.createElement('button');
+    flag.append(flagButton);
+    flagButton.className = 'bi bi-flag';
+
+    flagButton.addEventListener('click', () => {
+      flagDropdown.style.display = 'block';
+    });
+
+    const flagDropdown = document.createElement('div');
+    flag.append(flagDropdown);
+    flagDropdown.className = 'dropdown';
+    flagDropdown.append('asdf');
+    flagDropdown.style.display = 'none';
   });
 
   return list;
