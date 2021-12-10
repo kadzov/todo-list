@@ -16,12 +16,9 @@ html {
 }
 body {
   background-color: #1b1b1b;
+  margin: 1.5rem;
 }
 .content {
   max-width: 60rem;
-  margin: 1.5rem auto;
-}
-button {
-  cursor: pointer;
-  user-select: none;
+  margin: auto;
 }

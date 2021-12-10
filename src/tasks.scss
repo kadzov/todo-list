@@ -29,6 +29,8 @@ $space: 1.5rem;
 button {
   padding: 0.7rem;
   border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
   &:hover,
   &:focus-visible {
     filter: brightness(120%);
@@ -36,47 +38,40 @@ button {
 }
 .left {
   margin: calc($space - 0.7rem);
-  .bi-check-circle {
-    display: none;
-  }
 }
-.right {
+.bi-check-circle {
+  display: none;
+}
+.right,
+textarea {
   width: 100%;
   border-radius: 0 1rem 1rem 0;
 }
 textarea {
   display: block;
-  width: 100%;
   padding: $space;
   padding-left: 0;
-  border-radius: 0 1rem 1rem 0;
   resize: none;
   &::placeholder {
     color: #bbb;
   }
-  &:nth-child(1) {
-    padding-bottom: calc($space / 3);
-    font-weight: 500;
-  }
-  &:nth-child(2) {
-    padding-top: calc($space / 3);
-  }
+}
+.title {
+  padding-bottom: calc($space / 3);
+  font-weight: 500;
+}
+.desc {
+  padding-top: calc($space / 3);
 }
 .actions {
   margin: 0 $space 0.5rem -0.7rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-}
-.pill {
-  // border-radius: 1rem;
-}
-.icons {
-  display: flex;
 }
 .dropdown {
   width: 5rem;
   height: 5rem;
   position: absolute;
+  border-radius: 1rem;
 }
