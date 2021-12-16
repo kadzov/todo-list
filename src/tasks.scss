@@ -18,19 +18,18 @@ $space: 1.5rem;
   }
 }
 .add {
+  padding: 0;
   width: 100%;
   align-items: center;
 }
 .bi-plus-lg {
   margin: $space;
-  display: inline-block;
-  width: 2.4rem;
 }
 button {
   padding: 0.7rem;
   border-radius: 1rem;
-  cursor: pointer;
   user-select: none;
+  cursor: pointer;
   &:hover,
   &:focus-visible {
     filter: brightness(120%);
