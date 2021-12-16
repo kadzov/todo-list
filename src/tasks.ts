@@ -144,10 +144,21 @@ export default () => {
     const flagDropdown = document.createElement('div');
     flag.append(flagDropdown);
     flagDropdown.className = 'dropdown';
-    flagDropdown.append('asdf');
 
     flagButton.addEventListener('click', () => {
       flagDropdown.classList.toggle('show');
+    });
+    const priority = [
+      'High Priority',
+      'Medium Priority',
+      'Low Priority',
+      'No Priority',
+    ];
+    priority.forEach((i) => {
+      const dropdownButton = document.createElement('div');
+      dropdownButton.className = 'bi bi-flag flag';
+      dropdownButton.append(i);
+      flagDropdown.append(dropdownButton);
     });
   });
 
