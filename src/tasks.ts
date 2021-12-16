@@ -66,17 +66,11 @@ export default () => {
     task.append(right);
     right.className = 'right';
 
-    function changeHeight() {
-      this.style.height = 0;
-      this.style.height = `${this.scrollHeight}px`;
-    }
-
     const title = document.createElement('textarea');
     right.append(title);
     title.className = 'title';
     title.placeholder = 'Title';
     title.rows = 1;
-    title.addEventListener('input', changeHeight);
     title.focus();
 
     const desc = document.createElement('textarea');
@@ -84,7 +78,11 @@ export default () => {
     desc.className = 'desc';
     desc.placeholder = 'Description';
     desc.rows = 1;
-    desc.addEventListener('input', changeHeight);
+
+    desc.addEventListener('input', () => {
+      desc.style.height = '0';
+      desc.style.height = `${desc.scrollHeight}px`;
+    });
 
     const actions = document.createElement('div');
     right.append(actions);
@@ -149,7 +147,7 @@ export default () => {
     flagDropdown.append('asdf');
 
     flagButton.addEventListener('click', () => {
-      flagDropdown.classList.toggle('show')
+      flagDropdown.classList.toggle('show');
     });
   });
 
