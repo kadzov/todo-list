@@ -143,15 +143,14 @@ export default () => {
     flag.append(flagButton);
     flagButton.className = 'bi bi-flag';
 
-    flagButton.addEventListener('click', () => {
-      flagDropdown.style.display = 'block';
-    });
-
     const flagDropdown = document.createElement('div');
     flag.append(flagDropdown);
     flagDropdown.className = 'dropdown';
     flagDropdown.append('asdf');
-    flagDropdown.style.display = 'none';
+
+    flagButton.addEventListener('click', () => {
+      flagDropdown.style.display = 'block';
+    });
   });
 
   return list;
