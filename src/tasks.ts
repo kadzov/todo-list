@@ -149,7 +149,7 @@ export default () => {
     flagDropdown.append('asdf');
 
     flagButton.addEventListener('click', () => {
-      flagDropdown.style.display = 'block';
+      flagDropdown.classList.toggle('show')
     });
   });
 
