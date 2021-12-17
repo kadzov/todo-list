@@ -68,16 +68,28 @@ textarea {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.d{
+  position: relative;
+}
 .dropdown {
+  top: 5rem;
   width: 5rem;
-  height: 5rem;
   position: absolute;
   border-radius: 1rem;
   display: none;
+  :first-child {
+    border-radius: 1rem 1rem 0 0;
+  }
+  :last-child {
+    border-radius: 0 0 1rem 1rem;
+  }
 }
 .show {
   display: block;
 }
 .flag {
   border-radius: 0;
+  width: 16rem;
+  float: right;
+  padding: 1rem;
 }

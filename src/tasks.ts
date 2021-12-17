@@ -135,6 +135,7 @@ export default () => {
 
     const flag = document.createElement('div');
     icons.append(flag);
+    flag.className = 'd';
     flag.style.display = 'inline-block';
 
     const flagButton = document.createElement('button');
@@ -148,14 +149,16 @@ export default () => {
     flagButton.addEventListener('click', () => {
       flagDropdown.classList.toggle('show');
     });
+
     const priority = [
       'High Priority',
       'Medium Priority',
       'Low Priority',
       'No Priority',
     ];
+
     priority.forEach((i) => {
-      const dropdownButton = document.createElement('div');
+      const dropdownButton = document.createElement('button');
       dropdownButton.className = 'bi bi-flag flag';
       dropdownButton.append(i);
       flagDropdown.append(dropdownButton);
