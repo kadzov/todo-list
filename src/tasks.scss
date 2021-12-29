@@ -35,6 +35,9 @@ button {
     filter: brightness(120%);
   }
 }
+.task {
+  display: none;
+}
 .left {
   margin: calc($space - 0.7rem);
 }
@@ -68,10 +71,13 @@ textarea {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.d{
-  position: relative;
+.icons {
+  display: flex;
 }
 .dropdown {
+  position: relative;
+}
+.menu {
   top: 5rem;
   width: 5rem;
   position: absolute;
@@ -84,12 +90,12 @@ textarea {
     border-radius: 0 0 1rem 1rem;
   }
 }
-.show {
-  display: block;
-}
-.flag {
+.menu .bi-flag {
   border-radius: 0;
   width: 16rem;
   float: right;
   padding: 1rem;
+}
+.show {
+  display: block;
 }

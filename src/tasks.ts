@@ -1,31 +1,22 @@
 import './tasks.scss';
 
 export default () => {
-  const list = document.createElement('div');
-  list.className = 'list';
-
-  const add = document.createElement('button');
-  list.append(add);
-  add.className = 'add';
-
-  const plus = document.createElement('i');
-  add.append(plus);
-  plus.className = 'bi bi-plus-lg';
-
-  const text = document.createElement('span');
-  add.append(text);
-  text.append('Add task');
+  const list = document.querySelector('.list');
+  const add = document.querySelector('.add') as HTMLElement;
+  const task = document.querySelector('.task') as HTMLElement;
+  const circle = document.querySelector('.bi-circle') as HTMLElement;
+  const check = document.querySelector('.bi-check-circle') as HTMLElement;
+  const title = document.querySelector('.title') as HTMLInputElement;
+  const desc = document.querySelector('.desc') as HTMLInputElement;
+  // const actions = document.querySelector('.actions') as HTMLElement;
+  const save = document.querySelector('.save') as HTMLElement;
+  const cancel = document.querySelector('.cancel');
+  // const flag = document.querySelector('.bi-flag');
+  // const menu = document.querySelector('.menu');
 
   add.addEventListener('click', () => {
     add.remove();
-
-    const task = document.createElement('div');
-    list.append(task);
-    task.className = 'task';
-
-    const left = document.createElement('div');
-    task.append(left);
-    left.className = 'left';
+    task.style.display = 'flex';
 
     function completeTask() {
       task.remove();
@@ -34,19 +25,11 @@ export default () => {
       }
     }
 
-    const circle = document.createElement('button');
-    left.append(circle);
-    circle.className = 'bi bi-circle';
-
     circle.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
         completeTask();
       }
     });
-
-    const check = document.createElement('button');
-    left.append(check);
-    check.className = 'bi bi-check-circle';
 
     check.addEventListener('click', () => {
       completeTask();
@@ -61,49 +44,21 @@ export default () => {
       circle.style.display = 'inline';
       check.style.display = 'none';
     });
-
-    const right = document.createElement('div');
-    task.append(right);
-    right.className = 'right';
-
-    const title = document.createElement('textarea');
-    right.append(title);
-    title.className = 'title';
-    title.placeholder = 'Title';
-    title.rows = 1;
-    title.focus();
-
-    const desc = document.createElement('textarea');
-    right.append(desc);
-    desc.className = 'desc';
-    desc.placeholder = 'Description';
-    desc.rows = 1;
+    // title.focus();
 
     desc.addEventListener('input', () => {
       desc.style.height = '0';
       desc.style.height = `${desc.scrollHeight}px`;
     });
 
-    const actions = document.createElement('div');
-    right.append(actions);
-    actions.className = 'actions';
-
-    const pills = document.createElement('div');
-    actions.append(pills);
-
-    const save = document.createElement('button');
-    pills.append(save);
-    save.append('Save');
-    save.className = 'pill';
-
     save.addEventListener('click', () => {
       if (title.value) {
-        actions.style.display = 'none';
+        // actions.style.display = 'none';
         if (!desc.value) {
-          title.style.height = '100%';
-          desc.style.display = 'none';
+          // title.style.height = '100%';
+          // desc.style.display = 'none';
         }
-        add.click();
+        // add.click();
       }
     });
 
@@ -114,11 +69,6 @@ export default () => {
       }
     });
 
-    const cancel = document.createElement('button');
-    pills.append(cancel);
-    cancel.append('Cancel');
-    cancel.className = 'pill';
-
     cancel.addEventListener('click', () => {
       task.remove();
       if (!list.contains(add)) {
@@ -126,43 +76,9 @@ export default () => {
       }
     });
 
-    const icons = document.createElement('div');
-    actions.append(icons);
-
-    const calendar = document.createElement('button');
-    icons.append(calendar);
-    calendar.className = 'bi bi-calendar';
-
-    const flag = document.createElement('div');
-    icons.append(flag);
-    flag.className = 'd';
-    flag.style.display = 'inline-block';
-
-    const flagButton = document.createElement('button');
-    flag.append(flagButton);
-    flagButton.className = 'bi bi-flag';
-
-    const flagDropdown = document.createElement('div');
-    flag.append(flagDropdown);
-    flagDropdown.className = 'dropdown';
-
-    flagButton.addEventListener('click', () => {
-      flagDropdown.classList.toggle('show');
-    });
-
-    const priority = [
-      'High Priority',
-      'Medium Priority',
-      'Low Priority',
-      'No Priority',
-    ];
-
-    priority.forEach((i) => {
-      const dropdownButton = document.createElement('button');
-      dropdownButton.className = 'bi bi-flag flag';
-      dropdownButton.append(i);
-      flagDropdown.append(dropdownButton);
-    });
+    // flagButton.addEventListener('click', () => {
+    //   flagDropdown.classList.toggle('show');
+    // });
   });
 
   return list;
