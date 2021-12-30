@@ -8,11 +8,11 @@ export default () => {
   const check = document.querySelector('.bi-check-circle') as HTMLElement;
   const title = document.querySelector('.title') as HTMLInputElement;
   const desc = document.querySelector('.desc') as HTMLInputElement;
-  // const actions = document.querySelector('.actions') as HTMLElement;
+  const actions = document.querySelector('.actions') as HTMLElement;
   const save = document.querySelector('.save') as HTMLElement;
   const cancel = document.querySelector('.cancel');
-  // const flag = document.querySelector('.bi-flag');
-  // const menu = document.querySelector('.menu');
+  const flag = document.querySelector('.bi-flag');
+  const menu = document.querySelector('.menu');
 
   add.addEventListener('click', () => {
     add.remove();
@@ -44,7 +44,8 @@ export default () => {
       circle.style.display = 'inline';
       check.style.display = 'none';
     });
-    // title.focus();
+
+    title.focus();
 
     desc.addEventListener('input', () => {
       desc.style.height = '0';
@@ -53,12 +54,12 @@ export default () => {
 
     save.addEventListener('click', () => {
       if (title.value) {
-        // actions.style.display = 'none';
+        actions.style.display = 'none';
         if (!desc.value) {
-          // title.style.height = '100%';
-          // desc.style.display = 'none';
+          title.style.height = '100%';
+          desc.style.display = 'none';
         }
-        // add.click();
+        add.click();
       }
     });
 
@@ -76,9 +77,9 @@ export default () => {
       }
     });
 
-    // flagButton.addEventListener('click', () => {
-    //   flagDropdown.classList.toggle('show');
-    // });
+    flag.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
   });
 
   return list;
