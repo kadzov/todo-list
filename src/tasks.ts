@@ -14,7 +14,7 @@ export default () => {
 
   const text = document.createElement('span');
   add.append(text);
-  text.append('Add task');
+  text.textContent = 'Add task';
 
   add.addEventListener('click', () => {
     add.remove();
@@ -27,6 +27,14 @@ export default () => {
     task.append(left);
     left.className = 'left';
 
+    const circle = document.createElement('button');
+    left.append(circle);
+    circle.className = 'bi bi-circle';
+
+    const check = document.createElement('button');
+    left.append(check);
+    check.className = 'bi bi-check-circle';
+
     function completeTask() {
       task.remove();
       if (!list.contains(add)) {
@@ -34,19 +42,11 @@ export default () => {
       }
     }
 
-    const circle = document.createElement('button');
-    left.append(circle);
-    circle.className = 'bi bi-circle';
-
     circle.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
         completeTask();
       }
     });
-
-    const check = document.createElement('button');
-    left.append(check);
-    check.className = 'bi bi-check-circle';
 
     check.addEventListener('click', () => {
       completeTask();
@@ -93,8 +93,8 @@ export default () => {
 
     const save = document.createElement('button');
     pills.append(save);
-    save.append('Save');
     save.className = 'save';
+    save.textContent = 'Save';
 
     save.addEventListener('click', () => {
       if (title.value) {
@@ -116,8 +116,8 @@ export default () => {
 
     const cancel = document.createElement('button');
     pills.append(cancel);
-    cancel.append('Cancel');
     cancel.className = 'cancel';
+    cancel.textContent = 'Cancel';
 
     cancel.addEventListener('click', () => {
       task.remove();
@@ -152,23 +152,23 @@ export default () => {
 
     const highPriority = document.createElement('button');
     menu.append(highPriority);
-    highPriority.append('High Priority');
     highPriority.className = 'bi bi-flag flag';
+    highPriority.textContent = 'High Priority';
 
     const mediumPriority = document.createElement('button');
     menu.append(mediumPriority);
-    mediumPriority.append('Medium Priority');
     mediumPriority.className = 'bi bi-flag flag';
+    mediumPriority.textContent = 'Medium Priority';
 
     const lowPriority = document.createElement('button');
     menu.append(lowPriority);
-    lowPriority.append('Low Priority');
     lowPriority.className = 'bi bi-flag flag';
+    lowPriority.textContent = 'Low Priority';
 
     const noPriority = document.createElement('button');
     menu.append(noPriority);
-    noPriority.append('No Priority');
     noPriority.className = 'bi bi-flag flag';
+    noPriority.className = 'No Priority';
   });
 
   return list;
