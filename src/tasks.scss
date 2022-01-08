@@ -76,21 +76,22 @@ textarea {
 }
 .menu {
   top: 5rem;
-  width: 5rem;
+  right: -2rem;
   position: absolute;
   border-radius: 1rem;
-  // display: none;
-  &:first-child {
-    border-radius: 1rem 1rem 0 0;
+  display: none;
+  .bi-flag {
+    border-radius: 0;
+    width: 18rem;
+    float: right;
+    padding: 1rem;
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 1rem 1rem;
+    }
   }
-  &:last-child {
-    border-radius: 0 0 1rem 1rem;
-  }
-}
-.menu .bi-flag {
-  width: 16rem;
-  float: right;
-  padding: 1rem;
 }
 .show {
   display: block;
