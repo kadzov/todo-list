@@ -79,16 +79,15 @@ textarea {
   width: 5rem;
   position: absolute;
   border-radius: 1rem;
-  display: none;
-  :first-child {
+  // display: none;
+  &:first-child {
     border-radius: 1rem 1rem 0 0;
   }
-  :last-child {
+  &:last-child {
     border-radius: 0 0 1rem 1rem;
   }
 }
 .menu .bi-flag {
-  border-radius: 0;
   width: 16rem;
   float: right;
   padding: 1rem;
