@@ -137,49 +137,47 @@ export default () => {
 
     const flag = document.createElement('button');
     dropdown.append(flag);
-    flag.className = 'bi bi-flag-fill';
+    flag.className = 'bi bi-flag';
 
     const menu = document.createElement('div');
     dropdown.append(menu);
     menu.className = 'menu';
 
-    function showDropdown() {
+    flag.addEventListener('click', () => {
       menu.classList.toggle('show');
-    }
-
-    flag.addEventListener('click', showDropdown);
-
-    function setPriority(priority: Event) {
-      flag.style.color = window.getComputedStyle(
-        priority.target as Element,
-        'before'
-      ).color;
-      showDropdown();
-    }
+    });
 
     const highPriority = document.createElement('button');
     menu.append(highPriority);
     highPriority.className = 'bi bi-flag-fill';
     highPriority.textContent = 'High Priority';
-    highPriority.addEventListener('click', setPriority);
 
     const mediumPriority = document.createElement('button');
     menu.append(mediumPriority);
     mediumPriority.className = 'bi bi-flag-fill';
     mediumPriority.textContent = 'Medium Priority';
-    mediumPriority.addEventListener('click', setPriority);
 
     const lowPriority = document.createElement('button');
     menu.append(lowPriority);
     lowPriority.className = 'bi bi-flag-fill';
     lowPriority.textContent = 'Low Priority';
-    lowPriority.addEventListener('click', setPriority);
 
     const noPriority = document.createElement('button');
     menu.append(noPriority);
     noPriority.className = 'bi bi-flag-fill';
     noPriority.textContent = 'No Priority';
-    noPriority.addEventListener('click', setPriority);
+
+    document.querySelectorAll('.bi-flag-fill').forEach((i) =>
+      i.addEventListener('click', (e) => {
+        const { color } = window.getComputedStyle(
+          e.target as Element,
+          'before'
+        );
+        circle.style.color = color;
+        check.style.color = color;
+        flag.click();
+      })
+    );
   });
 
   return list;
