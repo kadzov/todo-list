@@ -27,14 +27,6 @@ export default () => {
     task.append(left);
     left.className = 'left';
 
-    const circle = document.createElement('button');
-    left.append(circle);
-    circle.className = 'bi bi-circle';
-
-    const check = document.createElement('button');
-    left.append(check);
-    check.className = 'bi bi-check-circle';
-
     function completeTask() {
       task.remove();
       if (!list.contains(add)) {
@@ -42,9 +34,15 @@ export default () => {
       }
     }
 
-    [circle, check].forEach((i) => {
-      i.addEventListener('click', completeTask);
-    });
+    const circle = document.createElement('button');
+    left.append(circle);
+    circle.className = 'bi bi-circle';
+    circle.onclick = completeTask;
+
+    const check = document.createElement('button');
+    left.append(check);
+    check.className = 'bi bi-check-circle';
+    check.onclick = completeTask;
 
     circle.addEventListener('mouseover', () => {
       circle.style.display = 'none';
@@ -112,10 +110,7 @@ export default () => {
     pills.append(cancel);
     cancel.className = 'cancel';
     cancel.textContent = 'Cancel';
-
-    cancel.addEventListener('click', () => {
-      completeTask();
-    });
+    cancel.onclick = completeTask;
 
     const icons = document.createElement('div');
     actions.append(icons);

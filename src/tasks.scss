@@ -70,15 +70,15 @@ textarea {
 .dropdown {
   position: relative;
 }
-.show {
-  display: block;
-}
 .menu {
   top: 5rem;
   right: -1.5rem;
   position: absolute;
   border-radius: 1rem;
   display: none;
+}
+.show {
+  display: block;
 }
 .bi-flag-fill {
   border-radius: 0;
