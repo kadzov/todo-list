@@ -137,7 +137,7 @@ export default () => {
 
     const flag = document.createElement('button');
     dropdown.append(flag);
-    flag.className = 'bi bi-flag';
+    flag.className = 'bi bi-flag-fill';
 
     const menu = document.createElement('div');
     dropdown.append(menu);
