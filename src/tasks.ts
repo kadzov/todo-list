@@ -65,7 +65,7 @@ export default () => {
     title.className = 'title';
     title.placeholder = 'Title';
     title.rows = 1;
-    title.focus();
+    // title.focus();
 
     const desc = document.createElement('textarea');
     right.append(desc);

@@ -70,36 +70,36 @@ textarea {
 .dropdown {
   position: relative;
 }
+.show {
+  display: block;
+}
 .menu {
   top: 5rem;
   right: -1.5rem;
   position: absolute;
   border-radius: 1rem;
   display: none;
-  .bi-flag-fill {
-    border-radius: 0;
-    width: 18rem;
-    padding: 1rem;
+}
+.bi-flag-fill {
+  border-radius: 0;
+  width: 18rem;
+  padding: 1rem;
+  &::before {
+    margin-right: 0.8rem;
+  }
+  &:nth-child(1) {
+    border-radius: 1rem 1rem 0 0;
     &::before {
-      margin-right: 0.8rem;
-    }
-    &:nth-child(1) {
-      border-radius: 1rem 1rem 0 0;
-      &::before {
-        color: #e62a2a;
-      }
-    }
-    &:nth-child(2):before {
-      color: #e9e500;
-    }
-    &:nth-child(3):before {
-      color: #2655ee;
-    }
-    &:nth-child(4) {
-      border-radius: 0 0 1rem 1rem;
+      color: #e62a2a;
     }
   }
-}
-.show {
-  display: block;
+  &:nth-child(2):before {
+    color: #e9e500;
+  }
+  &:nth-child(3):before {
+    color: #2655ee;
+  }
+  &:nth-child(4) {
+    border-radius: 0 0 1rem 1rem;
+  }
 }
