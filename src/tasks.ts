@@ -149,23 +149,23 @@ export default () => {
 
     const highPriority = document.createElement('button');
     menu.append(highPriority);
-    highPriority.className = 'bi bi-flag';
-    highPriority.textContent = 'High Priority';
+    highPriority.className = 'bi bi-flag-fill';
+    highPriority.textContent = ' High Priority';
 
     const mediumPriority = document.createElement('button');
     menu.append(mediumPriority);
-    mediumPriority.className = 'bi bi-flag';
-    mediumPriority.textContent = 'Medium Priority';
+    mediumPriority.className = 'bi bi-flag-fill';
+    mediumPriority.textContent = ' Medium Priority';
 
     const lowPriority = document.createElement('button');
     menu.append(lowPriority);
-    lowPriority.className = 'bi bi-flag';
-    lowPriority.textContent = 'Low Priority';
+    lowPriority.className = 'bi bi-flag-fill';
+    lowPriority.textContent = ' Low Priority';
 
     const noPriority = document.createElement('button');
     menu.append(noPriority);
-    noPriority.className = 'bi bi-flag';
-    noPriority.textContent = 'No Priority';
+    noPriority.className = 'bi bi-flag-fill';
+    noPriority.textContent = ' No Priority';
   });
 
   return list;

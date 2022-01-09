@@ -80,15 +80,23 @@ textarea {
   position: absolute;
   border-radius: 1rem;
   display: none;
-  .bi-flag {
+  .bi-flag-fill {
     border-radius: 0;
     width: 18rem;
-    float: right;
     padding: 1rem;
-    &:first-child {
+    &:nth-child(1) {
       border-radius: 1rem 1rem 0 0;
+      &::before {
+        color: rgb(240, 33, 33);
+      }
     }
-    &:last-child {
+    &:nth-child(2):before {
+      color: rgb(240, 202, 33);
+    }
+    &:nth-child(3):before {
+      color: rgb(33, 81, 240);
+    }
+    &:nth-child(4) {
       border-radius: 0 0 1rem 1rem;
     }
   }
