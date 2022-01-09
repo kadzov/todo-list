@@ -128,31 +128,31 @@ export default () => {
     dropdown.append(flag);
     flag.className = 'bi bi-flag';
 
-    const menu = document.createElement('div');
-    dropdown.append(menu);
-    menu.className = 'menu';
+    const dropdownContent = document.createElement('div');
+    dropdown.append(dropdownContent);
+    dropdownContent.className = 'dropdown-content';
 
     flag.addEventListener('click', () => {
-      menu.classList.toggle('show');
+      dropdownContent.classList.toggle('show');
     });
 
     const highPriority = document.createElement('button');
-    menu.append(highPriority);
+    dropdownContent.append(highPriority);
     highPriority.className = 'bi bi-flag-fill';
     highPriority.textContent = 'High Priority';
 
     const mediumPriority = document.createElement('button');
-    menu.append(mediumPriority);
+    dropdownContent.append(mediumPriority);
     mediumPriority.className = 'bi bi-flag-fill';
     mediumPriority.textContent = 'Medium Priority';
 
     const lowPriority = document.createElement('button');
-    menu.append(lowPriority);
+    dropdownContent.append(lowPriority);
     lowPriority.className = 'bi bi-flag-fill';
     lowPriority.textContent = 'Low Priority';
 
     const noPriority = document.createElement('button');
-    menu.append(noPriority);
+    dropdownContent.append(noPriority);
     noPriority.className = 'bi bi-flag-fill';
     noPriority.textContent = 'No Priority';
 
