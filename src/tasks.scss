@@ -84,17 +84,20 @@ textarea {
     border-radius: 0;
     width: 18rem;
     padding: 1rem;
+    &::before {
+      margin-right: 0.8rem;
+    }
     &:nth-child(1) {
       border-radius: 1rem 1rem 0 0;
       &::before {
-        color: rgb(240, 33, 33);
+        color: rgb(230, 42, 42);
       }
     }
     &:nth-child(2):before {
-      color: rgb(240, 202, 33);
+      color: rgb(233, 229, 0);
     }
     &:nth-child(3):before {
-      color: rgb(33, 81, 240);
+      color: rgb(38, 85, 238);
     }
     &:nth-child(4) {
       border-radius: 0 0 1rem 1rem;
