@@ -42,14 +42,8 @@ export default () => {
       }
     }
 
-    circle.addEventListener('keydown', (e) => {
-      if (e.code === 'Enter') {
-        completeTask();
-      }
-    });
-
-    check.addEventListener('click', () => {
-      completeTask();
+    [circle, check].forEach((i) => {
+      i.addEventListener('click', completeTask);
     });
 
     circle.addEventListener('mouseover', () => {
