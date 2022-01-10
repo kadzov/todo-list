@@ -80,38 +80,6 @@ export default () => {
     right.append(actions);
     actions.className = 'actions';
 
-    const pills = document.createElement('div');
-    actions.append(pills);
-
-    const save = document.createElement('button');
-    pills.append(save);
-    save.className = 'save';
-    save.textContent = 'Save';
-
-    save.addEventListener('click', () => {
-      if (title.value) {
-        actions.style.display = 'none';
-        if (!desc.value) {
-          title.style.height = '100%';
-          desc.style.display = 'none';
-        }
-        add.click();
-      }
-    });
-
-    title.addEventListener('keydown', (e) => {
-      if (e.code === 'Enter') {
-        e.preventDefault();
-        save.click();
-      }
-    });
-
-    const cancel = document.createElement('button');
-    pills.append(cancel);
-    cancel.className = 'cancel';
-    cancel.textContent = 'Cancel';
-    cancel.onclick = completeTask;
-
     const icons = document.createElement('div');
     actions.append(icons);
     icons.className = 'icons';
@@ -167,6 +135,38 @@ export default () => {
         flag.click();
       })
     );
+
+    const pills = document.createElement('div');
+    actions.append(pills);
+
+    const save = document.createElement('button');
+    pills.append(save);
+    save.className = 'save';
+    save.textContent = 'Save';
+
+    save.addEventListener('click', () => {
+      if (title.value) {
+        actions.style.display = 'none';
+        if (!desc.value) {
+          title.style.height = '100%';
+          desc.style.display = 'none';
+        }
+        add.click();
+      }
+    });
+
+    title.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        e.preventDefault();
+        save.click();
+      }
+    });
+
+    const cancel = document.createElement('button');
+    pills.append(cancel);
+    cancel.className = 'cancel';
+    cancel.textContent = 'Cancel';
+    cancel.onclick = completeTask;
   });
 
   return list;

@@ -72,7 +72,6 @@ textarea {
 }
 .dropdown-content {
   top: 5rem;
-  right: 0;
   position: absolute;
   border-radius: 1rem;
   display: none;
@@ -81,9 +80,10 @@ textarea {
   display: block;
 }
 .bi-flag-fill {
-  border-radius: 0;
   width: 18rem;
   padding: 1rem;
+  border-radius: 0;
+  text-align: left;
   &::before {
     margin-right: 0.8rem;
   }
