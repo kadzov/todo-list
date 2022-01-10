@@ -84,43 +84,47 @@ export default () => {
     actions.append(icons);
     icons.className = 'icons';
 
+    const calendarDropdown = document.createElement('div');
+    icons.append(calendarDropdown);
+    calendarDropdown.className = 'calendar-dropdown';
+
     const calendar = document.createElement('button');
-    icons.append(calendar);
+    calendarDropdown.append(calendar);
     calendar.className = 'bi bi-calendar';
 
-    const dropdown = document.createElement('div');
-    icons.append(dropdown);
-    dropdown.className = 'dropdown';
+    const flagDropdown = document.createElement('div');
+    icons.append(flagDropdown);
+    flagDropdown.className = 'flag-dropdown';
 
     const flag = document.createElement('button');
-    dropdown.append(flag);
+    flagDropdown.append(flag);
     flag.className = 'bi bi-flag';
 
-    const dropdownContent = document.createElement('div');
-    dropdown.append(dropdownContent);
-    dropdownContent.className = 'dropdown-content';
+    const flagContent = document.createElement('div');
+    flagDropdown.append(flagContent);
+    flagContent.className = 'flag-content';
 
     flag.addEventListener('click', () => {
-      dropdownContent.classList.toggle('show');
+      flagContent.classList.toggle('show');
     });
 
     const highPriority = document.createElement('button');
-    dropdownContent.append(highPriority);
+    flagContent.append(highPriority);
     highPriority.className = 'bi bi-flag-fill';
     highPriority.textContent = 'High Priority';
 
     const mediumPriority = document.createElement('button');
-    dropdownContent.append(mediumPriority);
+    flagContent.append(mediumPriority);
     mediumPriority.className = 'bi bi-flag-fill';
     mediumPriority.textContent = 'Medium Priority';
 
     const lowPriority = document.createElement('button');
-    dropdownContent.append(lowPriority);
+    flagContent.append(lowPriority);
     lowPriority.className = 'bi bi-flag-fill';
     lowPriority.textContent = 'Low Priority';
 
     const noPriority = document.createElement('button');
-    dropdownContent.append(noPriority);
+    flagContent.append(noPriority);
     noPriority.className = 'bi bi-flag-fill';
     noPriority.textContent = 'No Priority';
 
@@ -138,6 +142,7 @@ export default () => {
 
     const pills = document.createElement('div');
     actions.append(pills);
+    pills.className = 'pills';
 
     const save = document.createElement('button');
     pills.append(save);

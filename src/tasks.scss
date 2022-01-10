@@ -1,5 +1,20 @@
 $space: 1.5rem;
 
+button {
+  border-radius: 1rem;
+  user-select: none;
+  cursor: pointer;
+  &:not(.add) {
+    padding: 0.7rem;
+  }
+  &:hover,
+  &:focus-visible {
+    filter: brightness(120%);
+  }
+}
+.bi {
+  line-height: 0;
+}
 .add,
 .task {
   display: flex;
@@ -18,22 +33,11 @@ $space: 1.5rem;
   align-items: center;
 }
 .bi-plus-lg {
-  margin: $space;
+  padding: 0.7rem;
 }
-button {
-  border-radius: 1rem;
-  user-select: none;
-  cursor: pointer;
-  &:not(.add) {
-    padding: 0.7rem;
-  }
-  &:hover,
-  &:focus-visible {
-    filter: brightness(120%);
-  }
-}
+.bi-plus-lg,
 .left {
-  margin: calc($space - 0.7rem);
+  margin: 1.1rem;
 }
 .bi-check-circle {
   display: none;
@@ -63,15 +67,16 @@ textarea {
   margin: 0 $space 0.5rem -0.7rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 .icons {
   display: flex;
 }
-.dropdown {
+.flag-dropdown {
   position: relative;
 }
-.dropdown-content {
+.flag-content {
   top: 5rem;
   position: absolute;
   border-radius: 1rem;
