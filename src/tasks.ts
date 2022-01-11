@@ -104,8 +104,16 @@ export default () => {
     flagDropdown.append(flagContent);
     flagContent.className = 'flag-content';
 
+    function showDropdown(e: Event) {
+      if ((e.target as Element).className !== 'bi bi-flag') {
+        flagContent.classList.remove('show');
+        document.removeEventListener('click', showDropdown);
+      }
+    }
+
     flag.addEventListener('click', () => {
-      flagContent.classList.toggle('show');
+      flagContent.classList.add('show');
+      document.addEventListener('click', showDropdown);
     });
 
     const highPriority = document.createElement('button');
@@ -136,7 +144,6 @@ export default () => {
         );
         circle.style.color = color;
         check.style.color = color;
-        flag.click();
       })
     );
 
