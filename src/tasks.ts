@@ -105,7 +105,7 @@ export default () => {
     flagContent.className = 'flag-content';
 
     function showDropdown(e: Event) {
-      if ((e.target as Element).className !== 'bi bi-flag') {
+      if (!(e.target as Element).matches('.bi-flag')) {
         flagContent.classList.remove('show');
         document.removeEventListener('click', showDropdown);
       }
