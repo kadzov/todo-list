@@ -70,39 +70,3 @@ textarea {
 .icons {
   display: flex;
 }
-.flag-dropdown {
-  position: relative;
-}
-.flag-content {
-  position: absolute;
-  top: 5rem;
-  display: none;
-  border-radius: 1rem;
-}
-.show {
-  display: block;
-}
-.bi-flag-fill {
-  width: 18rem;
-  padding: 1rem;
-  border-radius: 0;
-  text-align: left;
-  &::before {
-    margin-right: 0.8rem;
-  }
-  &:nth-child(1) {
-    border-radius: 1rem 1rem 0 0;
-    &::before {
-      color: #e62a2a;
-    }
-  }
-  &:nth-child(2):before {
-    color: #e9e500;
-  }
-  &:nth-child(3):before {
-    color: #2655ee;
-  }
-  &:nth-child(4) {
-    border-radius: 0 0 1rem 1rem;
-  }
-}
