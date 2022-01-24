@@ -1,5 +1,6 @@
 import './tasks.scss';
 import priority from './priority';
+import calendar from './calendar';
 
 export default () => {
   const list = document.createElement('div');
@@ -96,14 +97,7 @@ export default () => {
     actions.append(icons);
     icons.className = 'icons';
 
-    const calendarDropdown = document.createElement('div');
-    icons.append(calendarDropdown);
-    calendarDropdown.className = 'calendar-dropdown';
-
-    const calendar = document.createElement('button');
-    calendarDropdown.append(calendar);
-    calendar.className = 'bi bi-calendar';
-
+    icons.append(calendar());
     icons.append(priority());
 
     const pills = document.createElement('div');
