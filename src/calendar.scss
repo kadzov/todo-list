@@ -1,0 +1,18 @@
+.calendar-dropdown {
+  position: relative;
+}
+.calendar-content {
+  position: absolute;
+  top: 5rem;
+  // display: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.show {
+  display: block;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 3.7rem);
+}

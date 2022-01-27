@@ -1,7 +1,7 @@
 $space: 1.5rem;
 
 button {
-  border-radius: 1rem;
+  border-radius: 50%;
   user-select: none;
   cursor: pointer;
   &:not(.add) {
@@ -69,4 +69,8 @@ textarea {
 }
 .icons {
   display: flex;
+}
+.save,
+.cancel {
+  border-radius: 1rem;
 }
