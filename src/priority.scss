@@ -1,22 +1,11 @@
-.flag-dropdown {
-  position: relative;
-}
-.flag-content {
-  position: absolute;
-  top: 5rem;
-  display: none;
-  border-radius: 1rem;
-}
-.show {
-  display: block;
-}
 .bi-flag-fill {
-  width: 18rem;
+  white-space: nowrap;
+  width: 100%;
   padding: 1rem;
   border-radius: 0;
   text-align: left;
   &::before {
-    margin-right: 0.8rem;
+    margin-right: 1rem;
   }
   &:nth-child(1) {
     border-radius: 1rem 1rem 0 0;

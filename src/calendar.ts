@@ -1,37 +1,37 @@
 import './calendar.scss';
 
 export default () => {
-  const calendarDropdown = document.createElement('div');
-  calendarDropdown.className = 'calendar-dropdown';
+  const dropdown = document.createElement('div');
+  dropdown.className = 'dropdown';
 
-  const calendar = document.createElement('button');
-  calendarDropdown.append(calendar);
-  calendar.className = 'bi bi-calendar';
+  const button = document.createElement('button');
+  dropdown.append(button);
+  button.className = 'bi bi-calendar';
 
-  const calendarContent = document.createElement('div');
-  calendarDropdown.append(calendarContent);
-  calendarContent.className = 'calendar-content';
+  const content = document.createElement('div');
+  dropdown.append(content);
+  content.className = 'dropdown-content';
 
   const date = new Date();
 
   const month = document.createElement('div');
-  calendarContent.append(month);
+  content.append(month);
   month.className = 'month';
   month.textContent = `${date.toLocaleString('default', {
     month: 'long',
   })} ${date.getFullYear()}`;
 
-  const arrowLeft= document.createElement('button')
-  month.append(arrowLeft)
-  arrowLeft.className='bi bi-caret-left'
+  const arrowLeft = document.createElement('button');
+  month.append(arrowLeft);
+  arrowLeft.className = 'bi bi-caret-left';
 
-  const arrowRight= document.createElement('button')
-  month.append(arrowRight)
-  arrowRight.className='bi bi-caret-right'
+  const arrowRight = document.createElement('button');
+  month.append(arrowRight);
+  arrowRight.className = 'bi bi-caret-right';
 
   const days = document.createElement('div');
-  calendarContent.append(days);
-  days.className='days';
+  content.append(days);
+  days.className = 'days';
 
   ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((i) => {
     const day = document.createElement('div');
@@ -50,5 +50,5 @@ export default () => {
     days.append(number);
   });
 
-  return calendarDropdown;
+  return dropdown;
 };

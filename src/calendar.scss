@@ -1,16 +1,5 @@
-.calendar-dropdown {
-  position: relative;
-}
 .calendar-content {
-  position: absolute;
-  top: 5rem;
-  // display: none;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-.show {
-  display: block;
+  padding: .5rem;
 }
 .days {
   display: grid;
