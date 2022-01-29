@@ -56,17 +56,6 @@ export default () => {
       check.style.display = 'none';
     });
 
-    document.querySelectorAll('.bi-flag-fill').forEach((i) =>
-      i.addEventListener('click', (e) => {
-        const { color } = window.getComputedStyle(
-          e.target as Element,
-          'before'
-        );
-        circle.style.color = color;
-        check.style.color = color;
-      })
-    );
-
     const right = document.createElement('div');
     task.append(right);
     right.className = 'right';
@@ -99,6 +88,17 @@ export default () => {
 
     icons.append(calendar());
     icons.append(priority());
+
+    document.querySelectorAll('.bi-flag-fill').forEach((i) =>
+      i.addEventListener('click', (e) => {
+        const { color } = window.getComputedStyle(
+          e.target as Element,
+          'before'
+        );
+        circle.style.color = color;
+        check.style.color = color;
+      })
+    );
 
     const pills = document.createElement('div');
     actions.append(pills);

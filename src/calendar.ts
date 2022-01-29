@@ -12,6 +12,18 @@ export default () => {
   dropdown.append(content);
   content.className = 'dropdown-content';
 
+  function showDropdown(e: Event) {
+    if (!(e.target as Element).matches('.bi-calendar')) {
+      content.classList.remove('dropdown-show');
+      document.removeEventListener('click', showDropdown);
+    }
+  }
+
+  button.addEventListener('click', () => {
+    content.classList.add('dropdown-show');
+    document.addEventListener('click', showDropdown);
+  });
+
   const date = new Date();
 
   const month = document.createElement('div');

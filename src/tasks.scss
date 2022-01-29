@@ -78,10 +78,11 @@ textarea {
   position: relative;
 }
 .dropdown-content {
-  // display: none;
+  display: none;
   position: absolute;
   top: 5rem;
   border-radius: 1rem;
+  text-align: center;
 }
 .dropdown-show {
   display: block;
