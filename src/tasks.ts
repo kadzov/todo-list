@@ -89,6 +89,26 @@ export default () => {
     icons.append(calendar());
     icons.append(priority());
 
+    let active: boolean;
+    let element: Element;
+    document.addEventListener('click', (e) => {
+      if ((e.target as Element).matches('.dropdown-button') && !active) {
+        element = e.target as Element;
+        (element.nextSibling as Element).classList.toggle('active');
+        active = true;
+      }
+      if (
+        !(e.target as Element).matches(
+          '.dropdown *:not(.number, .bi-flag-fill)'
+        ) &&
+        active
+      ) {
+        (element.nextSibling as Element).classList.remove('active');
+        console.log('asdf');
+        active = false;
+      }
+    });
+
     document.querySelectorAll('.bi-flag-fill').forEach((i) =>
       i.addEventListener('click', (e) => {
         const { color } = window.getComputedStyle(
@@ -102,7 +122,6 @@ export default () => {
 
     const pills = document.createElement('div');
     actions.append(pills);
-    pills.className = 'pills';
 
     const save = document.createElement('button');
     pills.append(save);
