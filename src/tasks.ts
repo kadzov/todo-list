@@ -89,22 +89,22 @@ export default () => {
     icons.append(calendar());
     icons.append(priority());
 
-    let active: boolean;
     let element: Element;
 
     document.addEventListener('click', (e) => {
-      if ((e.target as Element).matches('.dropdown-button') && !active) {
+      if (
+        (e.target as Element).matches('.dropdown-button') &&
+        !document.querySelector('.dropdown-content.active')
+      ) {
         element = e.target as Element;
         (element.nextSibling as Element).classList.toggle('active');
-        active = true;
       } else if (
         !(e.target as Element).matches(
           '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
         ) &&
-        active
+        document.querySelector('.dropdown-content.active')
       ) {
         (element.nextSibling as Element).classList.remove('active');
-        active = false;
         if (
           (e.target as Element).matches('.bi-calendar, .bi-flag') &&
           (e.target as Element).className !== element.className
@@ -113,7 +113,6 @@ export default () => {
             'active'
           );
           element = e.target as Element;
-          active = true;
         }
       }
     });
