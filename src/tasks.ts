@@ -91,21 +91,30 @@ export default () => {
 
     let active: boolean;
     let element: Element;
+
     document.addEventListener('click', (e) => {
       if ((e.target as Element).matches('.dropdown-button') && !active) {
         element = e.target as Element;
         (element.nextSibling as Element).classList.toggle('active');
         active = true;
-      }
-      if (
+      } else if (
         !(e.target as Element).matches(
-          '.dropdown *:not(.number, .bi-flag-fill)'
+          '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
         ) &&
         active
       ) {
         (element.nextSibling as Element).classList.remove('active');
-        console.log('asdf');
         active = false;
+        if (
+          (e.target as Element).matches('.bi-calendar, .bi-flag') &&
+          (e.target as Element).className !== element.className
+        ) {
+          ((e.target as Element).nextSibling as Element).classList.toggle(
+            'active'
+          );
+          element = e.target as Element;
+          active = true;
+        }
       }
     });
 
