@@ -11,50 +11,49 @@
     />
   </head>
   <body>
-    <div class="tasks">
+    <main class="tasks">
       <button class="add">
         <i class="bi bi-plus-lg"></i>
         <span>Add task</span>
       </button>
       <template>
-        <div class="task">
-          <div class="left">
-            <button class="bi bi-circle"></button>
-            <button class="bi bi-check-circle"></button>
-          </div>
-          <div class="right">
-            <textarea class="title" placeholder="Title" rows="1"></textarea>
+        <article class="task">
+          <section class="editor">
+            <textarea
+              class="title"
+              placeholder="What would you like to do?"
+              rows="1"
+            ></textarea>
             <textarea
               class="desc"
               placeholder="Description"
               rows="1"
             ></textarea>
-            <div class="actions">
-              <div class="icons">
+            <div class="extra">
+              <div class="dropdowns">
                 <div class="dropdown">
-                  <button class="dropdown-button bi bi-calendar"></button>
-                  <div class="dropdown-content">
-                    <div class="month">
-                      <div class="bi bi-caret-left"></div>
-                      <div class="bi bi-caret-right"></div>
-                      <div class="days"></div>
+                  <button class="bi bi-calendar"></button>
+                  <div class="content">
+                    <div class="header">
+                      <button class="bi bi-caret-left"></button>
+                      <button class="bi bi-caret-right"></button>
                     </div>
+                    <div class="days"></div>
                   </div>
                 </div>
                 <div class="dropdown">
-                  <button class="dropdown-button bi bi-flag"></button>
-                  <div class="dropdown-content"></div>
+                  <button class="bi bi-flag"></button>
+                  <div class="content"></div>
                 </div>
               </div>
-                <div class="pills">
-                  <button class="save">Save</button>
-                  <button class="cancel">Cancel</button>
-                </div>
+              <div class="pills">
+                <button class="save">Save</button>
+                <button class="cancel">Cancel</button>
               </div>
             </div>
-          </div>
-        </template>
-      </div>
-    
+          </section>
+        </article>
+      </template>
+    </main>
   </body>
 </html>

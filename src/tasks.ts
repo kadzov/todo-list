@@ -3,7 +3,7 @@ import './tasks.scss';
 // import calendar from './calendar';
 
 export default () => {
-  const list = document.querySelector('.list') as HTMLElement;
+  const tasks = document.querySelector('.tasks') as HTMLElement;
   const add = document.querySelector('.add') as HTMLElement;
   const template = document.querySelector('template') as HTMLTemplateElement;
 
@@ -11,12 +11,12 @@ export default () => {
     add.remove();
 
     const task = template.content.cloneNode(true) as HTMLElement;
-    list.insertBefore(task, list.childNodes[0]);
+    tasks.insertBefore(task, tasks.childNodes[0]);
 
     function completeTask() {
       task.remove();
-      if (!list.contains(add)) {
-        list.insertBefore(add, list.childNodes[0]);
+      if (!tasks.contains(add)) {
+        tasks.insertBefore(add, tasks.childNodes[0]);
       }
     }
 
@@ -113,5 +113,5 @@ export default () => {
     cancel.onclick = completeTask;
   });
 
-  return list;
+  return tasks;
 };
