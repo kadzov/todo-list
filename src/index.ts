@@ -1,8 +1,7 @@
 import './index.scss';
 import tasks from './tasks';
 
-const content = document.querySelector('.content');
-content.append(tasks());
+document.body.append(tasks());
 
 // outline color
 // drag and drop
