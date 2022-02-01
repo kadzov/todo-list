@@ -11,6 +11,51 @@
     />
   </head>
   <body>
-    <div class="content"></div>
+    <div class="content">
+      <div class="list">
+        <button class="add">
+          <i class="bi bi-plus-lg"></i>
+          <span>Add task</span>
+        </button>
+        <template>
+          <div class="task">
+            <div class="left">
+              <button class="bi bi-circle"></button>
+              <button class="bi bi-check-circle"></button>
+            </div>
+            <div class="right">
+              <textarea class="title" placeholder="Title" rows="1"></textarea>
+              <textarea
+                class="desc"
+                placeholder="Description"
+                rows="1"
+              ></textarea>
+              <div class="actions">
+                <div class="icons">
+                  <div class="dropdown">
+                    <button class="dropdown-button bi bi-calendar"></button>
+                    <div class="dropdown-content">
+                      <div class="month">
+                        <div class="bi bi-caret-left"></div>
+                        <div class="bi bi-caret-right"></div>
+                        <div class="days"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropdown-button bi bi-flag"></button>
+                    <div class="dropdown-content"></div>
+                  </div>
+                </div>
+                <div class="pills">
+                  <button class="save">Save</button>
+                  <button class="cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
   </body>
 </html>

@@ -8,7 +8,6 @@ content.append(tasks());
 // drag and drop
 // tab icon
 // tab styling
-// drag and drop
 // hamburger menu
 // check phone keyboard
 

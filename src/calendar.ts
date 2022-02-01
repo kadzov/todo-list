@@ -1,37 +1,14 @@
 import './calendar.scss';
 
 export default () => {
-  const dropdown = document.createElement('div');
-  dropdown.className = 'dropdown';
-
-  const button = document.createElement('button');
-  dropdown.append(button);
-  button.className = 'bi bi-calendar dropdown-button';
-
-  const content = document.createElement('div');
-  dropdown.append(content);
-  content.className = 'dropdown-content';
+  const month = document.querySelector('.month') as HTMLElement;
+  const days = document.querySelector('.days') as HTMLElement;
 
   const date = new Date();
 
-  const month = document.createElement('div');
-  content.append(month);
-  month.className = 'month';
   month.textContent = `${date.toLocaleString('default', {
     month: 'long',
   })} ${date.getFullYear()}`;
-
-  const arrowLeft = document.createElement('button');
-  month.append(arrowLeft);
-  arrowLeft.className = 'bi bi-caret-left';
-
-  const arrowRight = document.createElement('button');
-  month.append(arrowRight);
-  arrowRight.className = 'bi bi-caret-right';
-
-  const days = document.createElement('div');
-  content.append(days);
-  days.className = 'days';
 
   ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((i) => {
     const day = document.createElement('div');
@@ -49,6 +26,4 @@ export default () => {
     number.textContent = i;
     days.append(number);
   });
-
-  return dropdown;
 };
