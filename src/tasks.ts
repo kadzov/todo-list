@@ -47,30 +47,29 @@ export default () => {
     // const icons = document.querySelector('.icons') as HTMLElement;
     // icons.append(calendar());
 
-    let element: Element;
+    let button: Element;
 
     document.addEventListener('click', (e) => {
+      const event = e.target as Element;
       if (
-        (e.target as Element).matches('.dropdown button') &&
+        event.matches('.dropdown button') &&
         !document.querySelector('.content.active')
       ) {
-        element = e.target as Element;
-        (element.nextElementSibling as Element).classList.toggle('active');
+        button = e.target as Element;
+        (button.nextElementSibling as Element).classList.toggle('active');
       } else if (
-        !(e.target as Element).matches(
+        !event.matches(
           '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
         ) &&
         document.querySelector('.content.active')
       ) {
-        (element.nextElementSibling as Element).classList.remove('active');
+        (button.nextElementSibling as Element).classList.remove('active');
         if (
-          (e.target as Element).matches('.bi-calendar, .bi-flag') &&
-          (e.target as Element).className !== element.className
+          event.matches('.bi-calendar, .bi-flag') &&
+          event.className !== button.className
         ) {
-          ((e.target as Element).nextElementSibling as Element).classList.toggle(
-            'active'
-          );
-          element = e.target as Element;
+          (event.nextElementSibling as Element).classList.toggle('active');
+          button = e.target as Element;
         }
       }
     });
