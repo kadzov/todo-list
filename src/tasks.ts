@@ -48,6 +48,7 @@ export default () => {
     // icons.append(calendar());
 
     let button: Element;
+    let dropdown: Element;
 
     document.addEventListener('click', (e) => {
       const event = e.target as Element;
@@ -56,20 +57,22 @@ export default () => {
         !document.querySelector('.content.active')
       ) {
         button = e.target as Element;
-        (button.nextElementSibling as Element).classList.toggle('active');
+        dropdown = button.nextElementSibling as Element;
+        dropdown.classList.toggle('active');
       } else if (
         !event.matches(
           '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
         ) &&
         document.querySelector('.content.active')
       ) {
-        (button.nextElementSibling as Element).classList.remove('active');
+        dropdown.classList.remove('active');
         if (
           event.matches('.bi-calendar, .bi-flag') &&
           event.className !== button.className
         ) {
-          (event.nextElementSibling as Element).classList.toggle('active');
           button = e.target as Element;
+          dropdown = button.nextElementSibling as Element;
+          dropdown.classList.toggle('active');
         }
       }
     });
