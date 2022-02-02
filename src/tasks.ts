@@ -1,5 +1,4 @@
 import './tasks.scss';
-// import priority from './priority';
 // import calendar from './calendar';
 
 export default () => {
@@ -47,7 +46,6 @@ export default () => {
 
     // const icons = document.querySelector('.icons') as HTMLElement;
     // icons.append(calendar());
-    // icons.append(priority());
 
     let element: Element;
 
