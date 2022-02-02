@@ -19,21 +19,21 @@ export default () => {
       }
     }
 
-    const circle = document.querySelector('.bi-circle') as HTMLElement;
-    circle.onclick = completeTask;
+    // const circle = document.querySelector('.bi-circle') as HTMLElement;
+    // circle.onclick = completeTask;
 
-    const check = document.querySelector('.bi-check-circle') as HTMLElement;
-    check.onclick = completeTask;
+    // const check = document.querySelector('.bi-check-circle') as HTMLElement;
+    // check.onclick = completeTask;
 
-    circle.addEventListener('mouseover', () => {
-      circle.style.display = 'none';
-      check.style.display = 'inline';
-    });
+    // circle.addEventListener('mouseover', () => {
+    //   circle.style.display = 'none';
+    //   check.style.display = 'inline';
+    // });
 
-    check.addEventListener('mouseout', () => {
-      circle.style.display = 'inline';
-      check.style.display = 'none';
-    });
+    // check.addEventListener('mouseout', () => {
+    //   circle.style.display = 'inline';
+    //   check.style.display = 'none';
+    // });
 
     const title = document.querySelector('.title') as HTMLInputElement;
     title.focus();
@@ -75,16 +75,16 @@ export default () => {
       }
     });
 
-    document.querySelectorAll('.bi-flag-fill').forEach((i) =>
-      i.addEventListener('click', (e) => {
-        const { color } = window.getComputedStyle(
-          e.target as Element,
-          'before'
-        );
-        circle.style.color = color;
-        check.style.color = color;
-      })
-    );
+    // document.querySelectorAll('.bi-flag-fill').forEach((i) =>
+    //   i.addEventListener('click', (e) => {
+    //     const { color } = window.getComputedStyle(
+    //       e.target as Element,
+    //       'before'
+    //     );
+    //     circle.style.color = color;
+    //     check.style.color = color;
+    //   })
+    // );
 
     const actions = document.querySelector('.actions') as HTMLElement;
     const save = document.querySelector('.save') as HTMLElement;

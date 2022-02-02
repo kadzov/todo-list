@@ -43,7 +43,7 @@ button {
 .bi-check-circle {
   display: none;
 }
-.right,
+.editor,
 textarea {
   width: 100%;
   border-radius: 0 1rem 1rem 0;
@@ -64,24 +64,24 @@ textarea {
 .desc {
   padding-top: calc($space / 3);
 }
-.actions {
+.extra {
   margin: 0 $space 0.5rem -0.7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-.icons {
-  display: flex;
-}
 .save,
 .cancel {
   border-radius: 1rem;
 }
+.dropdowns {
+  display: flex;
+}
 .dropdown {
   position: relative;
 }
-.dropdown-content {
+.content {
   display: none;
   position: absolute;
   top: 5rem;
