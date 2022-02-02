@@ -36,7 +36,7 @@ export default () => {
     // });
 
     const title = document.querySelector('.title') as HTMLInputElement;
-    title.focus();
+    // title.focus();
 
     const desc = document.querySelector('.desc') as HTMLInputElement;
     desc.addEventListener('input', () => {
@@ -51,23 +51,23 @@ export default () => {
 
     document.addEventListener('click', (e) => {
       if (
-        (e.target as Element).matches('.dropdown-button') &&
-        !document.querySelector('.dropdown-content.active')
+        (e.target as Element).matches('.dropdown button') &&
+        !document.querySelector('.content.active')
       ) {
         element = e.target as Element;
-        (element.nextSibling as Element).classList.toggle('active');
+        (element.nextElementSibling as Element).classList.toggle('active');
       } else if (
         !(e.target as Element).matches(
           '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
         ) &&
-        document.querySelector('.dropdown-content.active')
+        document.querySelector('.content.active')
       ) {
-        (element.nextSibling as Element).classList.remove('active');
+        (element.nextElementSibling as Element).classList.remove('active');
         if (
           (e.target as Element).matches('.bi-calendar, .bi-flag') &&
           (e.target as Element).className !== element.className
         ) {
-          ((e.target as Element).nextSibling as Element).classList.toggle(
+          ((e.target as Element).nextElementSibling as Element).classList.toggle(
             'active'
           );
           element = e.target as Element;
