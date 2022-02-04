@@ -36,7 +36,7 @@ export default () => {
     // });
 
     const title = document.querySelector('.title') as HTMLInputElement;
-    // title.focus();
+    title.focus();
 
     const desc = document.querySelector('.desc') as HTMLInputElement;
     desc.addEventListener('input', () => {
