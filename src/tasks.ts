@@ -43,11 +43,11 @@ export default () => {
       desc.style.height = `${desc.scrollHeight}px`;
     });
 
-    const header = document.querySelector('.header') as HTMLElement;
+    const month = document.querySelector('.month') as HTMLElement;
     const days = document.querySelector('.days') as HTMLElement;
     const date = new Date();
 
-    header.textContent = `${date.toLocaleString('default', {
+    month.textContent = `${date.toLocaleString('default', {
       month: 'long',
     })} ${date.getFullYear()}`;
 
