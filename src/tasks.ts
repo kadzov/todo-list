@@ -69,32 +69,26 @@ export default () => {
     });
 
     let button: Element;
-    let dropdown: Element;
+    let content: Element;
 
     document.addEventListener('click', (e) => {
-      const event = e.target as Element;
-      if (
-        event.matches('.dropdown button') &&
-        !document.querySelector('.content.active')
-      ) {
-        button = e.target as Element;
-        dropdown = button.nextElementSibling as Element;
-        dropdown.classList.toggle('active');
-      } else if (
-        !event.matches(
-          '.dropdown *:not(.number, .bi-calendar, .bi-flag, .bi-flag-fill)'
-        ) &&
-        document.querySelector('.content.active')
-      ) {
-        dropdown.classList.remove('active');
-        if (
-          event.matches('.bi-calendar, .bi-flag') &&
-          event.className !== button.className
-        ) {
-          button = e.target as Element;
-          dropdown = button.nextElementSibling as Element;
-          dropdown.classList.toggle('active');
+      const element = e.target as Element;
+      const active = document.querySelector('.content.active');
+
+      if (element.matches('.dropdown > button')) {
+        if (active) {
+          content.classList.remove('active');
         }
+        if (!active || button !== element) {
+          button = e.target as Element;
+          content = button.nextElementSibling as Element;
+          content.classList.toggle('active');
+        }
+      } else if (
+        active &&
+        !element.matches('.content :not(.number, .bi-flag-fill)')
+      ) {
+        content.classList.remove('active');
       }
     });
 
