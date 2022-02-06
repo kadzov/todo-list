@@ -91,6 +91,14 @@ textarea {
 .active {
   display: block;
 }
+.bi-calendar + .content {
+  padding: 0.5rem;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 3.7rem);
+}
+
 .bi-flag-fill {
   white-space: nowrap;
   width: 100%;

@@ -1,5 +1,4 @@
 import './tasks.scss';
-// import calendar from './calendar';
 
 export default () => {
   const tasks = document.querySelector('.tasks') as HTMLElement;
@@ -36,7 +35,7 @@ export default () => {
     // });
 
     const title = document.querySelector('.title') as HTMLInputElement;
-    title.focus();
+    // title.focus();
 
     const desc = document.querySelector('.desc') as HTMLInputElement;
     desc.addEventListener('input', () => {
@@ -44,8 +43,30 @@ export default () => {
       desc.style.height = `${desc.scrollHeight}px`;
     });
 
-    // const icons = document.querySelector('.icons') as HTMLElement;
-    // icons.append(calendar());
+    const header = document.querySelector('.header') as HTMLElement;
+    const days = document.querySelector('.days') as HTMLElement;
+    const date = new Date();
+
+    header.textContent = `${date.toLocaleString('default', {
+      month: 'long',
+    })} ${date.getFullYear()}`;
+
+    ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((i) => {
+      const day = document.createElement('div');
+      day.className = 'day';
+      day.textContent = i;
+      days.append(day);
+    });
+
+    Array.from(
+      Array(new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()),
+      (_, i) => (i + 1).toString()
+    ).forEach((i) => {
+      const number = document.createElement('button');
+      number.className = 'number';
+      number.textContent = i;
+      days.append(number);
+    });
 
     let button: Element;
     let dropdown: Element;
