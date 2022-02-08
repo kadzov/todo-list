@@ -37,9 +37,8 @@ button {
   margin: 1.8rem;
 }
 .checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   flex: 0 0 2.6rem;
   height: 2.6rem;
   margin: 1.4rem;
