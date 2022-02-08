@@ -4,7 +4,7 @@ button {
   border-radius: 50%;
   user-select: none;
   cursor: pointer;
-  &:not(.add, .bi-flag-fill) {
+  &:not(.add, .checkbox, .bi-flag-fill) {
     padding: 0.7rem;
   }
   &:hover,
@@ -34,14 +34,23 @@ button {
   align-items: center;
 }
 .bi-plus-lg {
-  padding: 0.7rem;
+  margin: 1.8rem;
 }
-.bi-plus-lg,
-.left {
-  margin: 1.1rem;
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 2.6rem;
+  height: 2.6rem;
+  margin: 1.4rem;
+  box-shadow: 0 0 0 0.2rem;
 }
-.bi-check-circle {
-  display: none;
+.bi-check-lg {
+  opacity: 0;
+  .checkbox:hover &,
+  .checkbox:focus & {
+    opacity: 1;
+  }
 }
 .editor,
 textarea {

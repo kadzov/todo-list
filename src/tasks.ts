@@ -5,8 +5,8 @@ export default () => {
   const add = document.querySelector('.add') as HTMLElement;
   const template = document.querySelector('template') as HTMLTemplateElement;
 
-  add.addEventListener('click', () => {
-    add.remove();
+  // add.addEventListener('click', () => {
+  //   add.remove();
 
     const task = template.content.cloneNode(true) as HTMLElement;
     tasks.insertBefore(task, tasks.childNodes[0]);
@@ -17,22 +17,6 @@ export default () => {
         tasks.insertBefore(add, tasks.childNodes[0]);
       }
     }
-
-    // const circle = document.querySelector('.bi-circle') as HTMLElement;
-    // circle.onclick = completeTask;
-
-    // const check = document.querySelector('.bi-check-circle') as HTMLElement;
-    // check.onclick = completeTask;
-
-    // circle.addEventListener('mouseover', () => {
-    //   circle.style.display = 'none';
-    //   check.style.display = 'inline';
-    // });
-
-    // check.addEventListener('mouseout', () => {
-    //   circle.style.display = 'inline';
-    //   check.style.display = 'none';
-    // });
 
     const title = document.querySelector('.title') as HTMLInputElement;
     // title.focus();
@@ -126,7 +110,7 @@ export default () => {
     });
 
     cancel.onclick = completeTask;
-  });
+  // });
 
   return tasks;
 };
