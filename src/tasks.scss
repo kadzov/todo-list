@@ -12,12 +12,12 @@ button {
     color: #fff;
     background-color: rgb(70, 70, 70);
   }
-  &:hover .bi {
+  &:hover * {
     background-color: transparent;
   }
-}
-.bi {
-  line-height: 0;
+  &:not(.save, .cancel) {
+    line-height: 0;
+  }
 }
 .tasks {
   max-width: 60rem;
