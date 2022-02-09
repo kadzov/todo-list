@@ -7,16 +7,17 @@ button {
   &:not(.add, .circle, .bi-flag-fill) {
     padding: 0.7rem;
   }
+  &:not(.save, .cancel, .number) {
+    line-height: 0;
+  }
+  &:hover *,
+  &:focus-visible * {
+    background-color: initial;
+  }
   &:not(.circle):hover,
   &:not(.circle):focus-visible {
     color: #fff;
-    background-color: rgb(70, 70, 70);
-  }
-  &:hover * {
-    background-color: transparent;
-  }
-  &:not(.save, .cancel) {
-    line-height: 0;
+    background-color: #3d3d3d;
   }
 }
 .tasks {
@@ -51,7 +52,7 @@ button {
 .bi-check {
   opacity: 0;
   .circle:hover &,
-  .circle:focus & {
+  .circle:focus-visible & {
     opacity: 1;
   }
 }
@@ -108,12 +109,12 @@ textarea {
 }
 .bi-calendar + .content {
   padding: 0.5rem;
+  user-select: none;
 }
 .days {
   display: grid;
-  grid-template-columns: repeat(7, 3.7rem);
+  grid-template-columns: repeat(7, 3.8rem);
 }
-
 .bi-flag-fill {
   white-space: nowrap;
   width: 100%;

@@ -25,6 +25,7 @@ export default () => {
   // title.focus();
 
   const desc = document.querySelector('.desc') as HTMLInputElement;
+
   desc.addEventListener('input', () => {
     desc.style.height = '0';
     desc.style.height = `${desc.scrollHeight}px`;
@@ -76,6 +77,7 @@ export default () => {
       !element.matches('.content :not(.number, .bi-flag-fill)')
     ) {
       content.classList.remove('active');
+      (button as HTMLElement).focus();
     }
   });
 
