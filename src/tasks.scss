@@ -4,11 +4,11 @@ button {
   border-radius: 50%;
   user-select: none;
   cursor: pointer;
-  &:not(.add, .checkbox, .bi-flag-fill) {
+  &:not(.add, .circle, .bi-flag-fill) {
     padding: 0.7rem;
   }
-  &:hover,
-  &:focus-visible {
+  &:not(.circle):hover,
+  &:not(.circle):focus-visible {
     filter: brightness(150%);
   }
 }
@@ -36,18 +36,19 @@ button {
 .bi-plus-lg {
   margin: 1.8rem;
 }
-.checkbox {
+.circle {
   display: grid;
   place-items: center;
-  flex: 0 0 2.6rem;
-  height: 2.6rem;
-  margin: 1.4rem;
-  box-shadow: 0 0 0 0.2rem;
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  margin: 1.6rem;
+  border: 0.2rem solid;
 }
-.bi-check-lg {
+.bi-check {
   opacity: 0;
-  .checkbox:hover &,
-  .checkbox:focus & {
+  background-color: transparent;
+  .circle:hover &,
+  .circle:focus & {
     opacity: 1;
   }
 }
