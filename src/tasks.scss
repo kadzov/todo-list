@@ -9,7 +9,11 @@ button {
   }
   &:not(.circle):hover,
   &:not(.circle):focus-visible {
-    filter: brightness(150%);
+    color: #fff;
+    background-color: rgb(70, 70, 70);
+  }
+  &:hover .bi {
+    background-color: transparent;
   }
 }
 .bi {
@@ -46,7 +50,6 @@ button {
 }
 .bi-check {
   opacity: 0;
-  background-color: transparent;
   .circle:hover &,
   .circle:focus & {
     opacity: 1;
@@ -79,6 +82,9 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+.buttons {
+  user-select: none;
 }
 .save,
 .cancel {
