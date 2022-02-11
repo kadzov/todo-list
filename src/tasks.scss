@@ -84,15 +84,13 @@ textarea {
   align-items: center;
   flex-wrap: wrap;
 }
+.dropdowns,
 .buttons {
-  user-select: none;
+  display: flex;
 }
 .save,
 .cancel {
   border-radius: 1rem;
-}
-.dropdowns {
-  display: flex;
 }
 .dropdown {
   position: relative;
@@ -101,8 +99,9 @@ textarea {
   display: none;
   position: absolute;
   top: 5rem;
-  border-radius: 1rem;
   text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 0rem 0.7rem #000;
 }
 .active {
   display: block;
@@ -110,8 +109,19 @@ textarea {
 .bi-calendar + .content {
   padding: 0.5rem;
   user-select: none;
+  display: block;
 }
-.days {
+.header {
+  margin: 0.7rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chevrons {
+  display: flex;
+}
+.days,
+.numbers {
   display: grid;
   grid-template-columns: repeat(7, 3.8rem);
 }

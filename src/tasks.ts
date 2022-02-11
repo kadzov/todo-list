@@ -11,15 +11,16 @@ export default () => {
   const task = template.content.cloneNode(true) as HTMLElement;
   tasks.insertBefore(task, tasks.childNodes[0]);
 
-  function completeTask() {
+  function removeTask() {
     task.remove();
     if (!tasks.contains(add)) {
       tasks.insertBefore(add, tasks.childNodes[0]);
+      // prepend
     }
   }
 
   const circle = document.querySelector('.circle') as HTMLElement;
-  circle.onclick = completeTask;
+  circle.onclick = removeTask;
 
   const title = document.querySelector('.title') as HTMLInputElement;
   // title.focus();
@@ -31,29 +32,64 @@ export default () => {
     desc.style.height = `${desc.scrollHeight}px`;
   });
 
-  const month = document.querySelector('.month') as HTMLElement;
-  const days = document.querySelector('.days') as HTMLElement;
-  const date = new Date();
-
-  month.textContent = `${date.toLocaleString('default', {
-    month: 'long',
-  })} ${date.getFullYear()}`;
-
   ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((i) => {
     const day = document.createElement('div');
+    document.querySelector('.days').append(day);
     day.className = 'day';
     day.textContent = i;
-    days.append(day);
   });
 
-  Array.from(
-    Array(new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()),
-    (_, i) => (i + 1).toString()
-  ).forEach((i) => {
-    const number = document.createElement('button');
-    number.className = 'number';
-    number.textContent = i;
-    days.append(number);
+  const localDate = new Date();
+  const numbers = document.querySelector('.numbers');
+
+  function setCalendar() {
+    const month = localDate.getMonth();
+    const year = localDate.getFullYear();
+
+    document.querySelector('.month').textContent = new Date(
+      year,
+      month
+    ).toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
+
+    const firstDay = new Date(year, month, 1).getDay();
+
+    for (let i = 1; i <= firstDay; i += 1) {
+      numbers.append(document.createElement('div'));
+    }
+
+    const lastNumber = new Date(year, month + 1, 0).getDate();
+
+    Array.from(Array(lastNumber), (_, i) => i + 1).forEach((i) => {
+      const number = document.createElement('button');
+      numbers.append(number);
+      number.className = 'number';
+      number.textContent = i.toString();
+      const currentDate = new Date()
+      if (
+        i === currentDate.getDate() &&
+        month === currentDate.getMonth() &&
+        year === currentDate.getFullYear()
+      ) {
+        number.style.color = '#ff8100';
+      }
+    });
+  }
+
+  setCalendar();
+
+  document.querySelector('.bi-chevron-left').addEventListener('click', () => {
+    numbers.replaceChildren();
+    localDate.setMonth(localDate.getMonth() - 1);
+    setCalendar();
+  });
+
+  document.querySelector('.bi-chevron-right').addEventListener('click', () => {
+    numbers.replaceChildren();
+    localDate.setMonth(localDate.getMonth() + 1);
+    setCalendar();
   });
 
   let button: Element;
@@ -113,7 +149,7 @@ export default () => {
     }
   });
 
-  cancel.onclick = completeTask;
+  cancel.onclick = removeTask;
   // });
 
   return tasks;
